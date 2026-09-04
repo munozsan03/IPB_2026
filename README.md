@@ -65,3 +65,11 @@ The project was developed using Python 3.10 and a Conda environment.
 conda create -n sm_ipb_2026 python=3.10
 conda activate sm_ipb_2026
 pip install -r requirements.txt
+
+### 2. CATNIP Replication
+
+The original CATNIP workflow was reproduced using the publicly available code and dataset from the Gomes Group. This implementation serves as the baseline for evaluating the subsequent modifications developed in this project.
+
+The original CATNIP repository provides the complete instructions for environment setup, feature calculation, model training, and evaluation.
+
+See the CATNIP README for the complete reproduction instructions.
