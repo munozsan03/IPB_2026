@@ -100,3 +100,67 @@ python ESMC-6000/Embeddings/evaluate_ESMC.py
 
 The generated embeddings are then used by the modified CATNIP model to rank enzyme candidates for each substrate.
 
+### 4. CATNIP + Protein Embeddings + Sequence/Alignment Information
+
+This model extends the previous approach by incorporating sequence/alignment information alongside the ESMC-600M protein embeddings.
+
+**1. Run the grid search**
+
+```bash
+python ESMC_AS/grid_ES_AS.py
+```
+
+**2. Evaluate the model**
+
+```bash
+python ESMC_AS/evaluate_ES_AS.py
+```
+### 5. EviCYP Adaptation
+
+The EviCYP pipeline was adapted to the CATNIP/BioCatSet1 dataset by replacing the original EviCYP data with the enzyme and substrate data used in this project.
+
+**1. Organize the data**
+
+Open and run the data organization notebook:
+
+```bash
+EviCYP/organize_data.ipynb
+```
+
+This prepares the enzyme and substrate data for use with the EviCYP pipeline.
+
+**2. Generate molecular features**
+
+```bash
+python EviCYP/drug_bmfm.py
+```
+
+This processes the molecular data and generates the features required by the EviCYP model.
+
+**3. Train the model**
+
+```bash
+python EviCYP/model/train.py
+```
+
+This trains the EviCYP model using the prepared enzyme and molecular features.
+
+**4. View the results**
+
+The model predictions and uncertainty estimates are saved to:
+
+```text
+EviCYP/model/results/data_splits/drug_bmfm-target_esmc/0/test_predictions_with_uncertainty.csv
+```
+### 6. Evaluation and Results
+
+The results from all four model configurations can be compared using the following script:
+
+```bash
+python compare_models/plots_metrics.py
+```
+
+This script calculates and displays the evaluation metrics for each model side-by-side, allowing direct comparison of their performance.
+
+
+
