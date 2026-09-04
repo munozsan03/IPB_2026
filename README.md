@@ -65,7 +65,7 @@ The project was developed using Python 3.10 and a Conda environment.
 conda create -n sm_ipb_2026 python=3.10
 conda activate sm_ipb_2026
 pip install -r requirements.txt
-
+```
 ### 2. CATNIP Replication
 
 The original CATNIP workflow was reproduced using the publicly available code and dataset from the Gomes Group. This implementation serves as the baseline for evaluating the subsequent modifications developed in this project.
@@ -73,3 +73,30 @@ The original CATNIP workflow was reproduced using the publicly available code an
 The original CATNIP repository provides the complete instructions for environment setup, feature calculation, model training, and evaluation.
 
 See the CATNIP README for the complete reproduction instructions.
+
+### 3. CATNIP + Protein Embeddings
+
+The CATNIP workflow was extended by incorporating protein embeddings generated using **ESMC-600M**. The embeddings were used as an additional protein representation for enzyme–substrate prediction.
+
+The workflow consists of three steps:
+
+**1. Generate protein embeddings**
+
+```bash
+python ESMC-6000/generate_embeddings.py
+```
+
+**2. Run the grid search**
+
+```bash
+python ESMC-6000/Embeddings/grid_test.py
+```
+
+**3. Evaluate the model**
+
+```bash
+python ESMC-6000/Embeddings/evaluate_ESMC.py
+```
+
+The generated embeddings are then used by the modified CATNIP model to rank enzyme candidates for each substrate.
+
