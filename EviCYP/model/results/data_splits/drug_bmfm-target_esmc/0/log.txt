@@ -1,0 +1,1851 @@
+Random seed: 0
+Running on cuda:0
+Dataset: data_splits
+Batch size: 128
+Random seed: 0
+Running on cuda:0
+Dataset: /raid/data/smunoz/catnip/EviCYP/data_splits
+Batch size: 128
+Random seed: 0
+Running on cuda:0
+Dataset: /raid/data/smunoz/catnip/EviCYP/data_splits
+Batch size: 128
+Random seed: 0
+Running on cuda:0
+Dataset: /raid/data/smunoz/catnip/EviCYP/data_splits
+Batch size: 128
+Random seed: 0
+Running on cuda:0
+Dataset: data_splits
+Batch size: 128
+Random seed: 0
+Running on cuda:0
+Dataset: /raid/data/smunoz/catnip/EviCYP/data_splits
+Batch size: 128
+Random seed: 0
+Running on cuda:0
+Dataset: /raid/data/smunoz/catnip/EviCYP/data_splits
+Batch size: 128
+Model: CYPClassifier(
+  (drug_encoder): Sequential(
+    (0): Linear(in_features=1236, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Dropout(p=0.25, inplace=False)
+  )
+  (target_encoder): TargetLAEncoder(
+    (feature_conv): Conv1d(1152, 768, kernel_size=(9,), stride=(1,), padding=(4,))
+    (feature_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (attn_conv): Conv1d(1152, 768, kernel_size=(9,), stride=(1,), padding=(4,))
+    (dropout): Dropout(p=0.25, inplace=False)
+    (proj): Sequential(
+      (0): Linear(in_features=1536, out_features=1024, bias=True)
+      (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+      (3): Dropout(p=0.25, inplace=False)
+    )
+  )
+  (drug_vq): HardVectorQuantizer(
+    (codebook): Embedding(128, 4)
+  )
+  (target_vq): HardVectorQuantizer(
+    (codebook): Embedding(128, 4)
+  )
+  (evidence_head): Sequential(
+    (0): Linear(in_features=2048, out_features=512, bias=True)
+    (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Dropout(p=0.25, inplace=False)
+    (4): Linear(in_features=512, out_features=2, bias=True)
+  )
+)
+Evaluate codebook perplexity - Drug: 15.8353 | Target: 22.0689
+TP: 44; TN: 0; FP: 3661; FN: 0
+Accuracy: 0.011875843454790824
+Precision: 0.011875843454790824
+Recall: 1.0
+Specificity: 0.0
+F1 Score: 0.023472926113630305
+AUROC: 0.49142372923443667
+AUPR: 0.011382510909362781
+MCC: 0.0
+Number of epochs: 20
+Weight decay: 2e-05
+Use metric: MCC
+===== Epoch 1 | total 30.9445 | class 16.3599 | dVQ 6.7957 | tVQ 7.7889 | lam_eff 0.0500 =====
+Epoch 1 codebook perplexity - Drug: 52.0690 | Target: 49.7127
+Evaluate codebook perplexity - Drug: 37.5071 | Target: 39.7528
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.6854249956544411
+AUPR: 0.07698500826442262
+MCC: 0.0
+===== Epoch 2 | total 11.4572 | class 6.5599 | dVQ 1.8048 | tVQ 3.0925 | lam_eff 0.1000 =====
+Epoch 2 codebook perplexity - Drug: 52.3095 | Target: 52.9654
+Evaluate codebook perplexity - Drug: 36.3969 | Target: 41.4422
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.7350171339177075
+AUPR: 0.1241971817704796
+MCC: 0.0
+===== Epoch 3 | total 9.1757 | class 5.9621 | dVQ 1.2287 | tVQ 1.9850 | lam_eff 0.1500 =====
+Epoch 3 codebook perplexity - Drug: 53.7600 | Target: 57.0019
+Evaluate codebook perplexity - Drug: 41.4204 | Target: 52.8468
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.7357713987733108
+AUPR: 0.11947103086480343
+MCC: 0.0
+===== Epoch 4 | total 8.1045 | class 5.8419 | dVQ 0.9802 | tVQ 1.2823 | lam_eff 0.2000 =====
+Epoch 4 codebook perplexity - Drug: 59.1481 | Target: 66.2097
+Evaluate codebook perplexity - Drug: 44.1386 | Target: 68.2552
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.7711318318392888
+AUPR: 0.11459257619464601
+MCC: 0.0
+===== Epoch 5 | total 7.6686 | class 5.8297 | dVQ 0.8811 | tVQ 0.9578 | lam_eff 0.2500 =====
+Epoch 5 codebook perplexity - Drug: 63.1460 | Target: 73.4618
+Evaluate codebook perplexity - Drug: 46.2804 | Target: 75.1421
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.7534019517767128
+AUPR: 0.14149746078103326
+MCC: 0.0
+===== Epoch 6 | total 7.4341 | class 5.8502 | dVQ 0.7998 | tVQ 0.7840 | lam_eff 0.3000 =====
+Epoch 6 codebook perplexity - Drug: 64.3013 | Target: 77.6024
+Evaluate codebook perplexity - Drug: 46.0194 | Target: 77.4596
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.790854461026545
+AUPR: 0.11785826336264929
+MCC: 0.0
+===== Epoch 7 | total 7.3146 | class 5.8960 | dVQ 0.7540 | tVQ 0.6646 | lam_eff 0.3500 =====
+Epoch 7 codebook perplexity - Drug: 65.8343 | Target: 80.8627
+Evaluate codebook perplexity - Drug: 46.7880 | Target: 81.0755
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.7767934742122123
+AUPR: 0.18504042714019797
+MCC: 0.0
+===== Epoch 8 | total 7.2684 | class 5.9771 | dVQ 0.7329 | tVQ 0.5584 | lam_eff 0.4000 =====
+Epoch 8 codebook perplexity - Drug: 67.5074 | Target: 83.6807
+Evaluate codebook perplexity - Drug: 48.1717 | Target: 84.1522
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.8015321198877604
+AUPR: 0.17416897220575434
+MCC: 0.0
+===== Epoch 9 | total 7.1643 | class 6.0033 | dVQ 0.6575 | tVQ 0.5035 | lam_eff 0.4500 =====
+Epoch 9 codebook perplexity - Drug: 68.7788 | Target: 86.1803
+Evaluate codebook perplexity - Drug: 50.0041 | Target: 86.4165
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.7697785006580418
+AUPR: 0.18125088488655877
+MCC: 0.0
+===== Epoch 10 | total 7.2749 | class 6.1748 | dVQ 0.6441 | tVQ 0.4559 | lam_eff 0.5000 =====
+Epoch 10 codebook perplexity - Drug: 70.2817 | Target: 88.8165
+Evaluate codebook perplexity - Drug: 49.1262 | Target: 88.7580
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.7886940974895087
+AUPR: 0.0830485614246743
+MCC: 0.0
+===== Epoch 11 | total 7.1022 | class 6.0867 | dVQ 0.5883 | tVQ 0.4272 | lam_eff 0.5000 =====
+Epoch 11 codebook perplexity - Drug: 70.9770 | Target: 91.0837
+Evaluate codebook perplexity - Drug: 48.6733 | Target: 89.8358
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.7901902113183183
+AUPR: 0.12519585451086768
+MCC: 0.0
+===== Epoch 12 | total 6.8406 | class 5.8968 | dVQ 0.5378 | tVQ 0.4060 | lam_eff 0.5000 =====
+Epoch 12 codebook perplexity - Drug: 71.6303 | Target: 92.8679
+Evaluate codebook perplexity - Drug: 48.8417 | Target: 89.0719
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.8104405155074371
+AUPR: 0.13389417359621666
+MCC: 0.0
+===== Epoch 13 | total 6.7330 | class 5.8378 | dVQ 0.5122 | tVQ 0.3830 | lam_eff 0.5000 =====
+Epoch 13 codebook perplexity - Drug: 72.5625 | Target: 94.6903
+Evaluate codebook perplexity - Drug: 48.1786 | Target: 91.1037
+TP: 1; TN: 3661; FP: 0; FN: 43
+Accuracy: 0.9883940620782726
+Precision: 1.0
+Recall: 0.022727272727272728
+Specificity: 1.0
+F1 Score: 0.044444444444444446
+AUROC: 0.8076096943209754
+AUPR: 0.1917670179741824
+MCC: 0.1498780510892486
+===== Epoch 14 | total 6.4812 | class 5.6492 | dVQ 0.4667 | tVQ 0.3653 | lam_eff 0.5000 =====
+Epoch 14 codebook perplexity - Drug: 72.5520 | Target: 96.0475
+Evaluate codebook perplexity - Drug: 47.4172 | Target: 91.7848
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.814171488167664
+AUPR: 0.1218766124875123
+MCC: 0.0
+===== Epoch 15 | total 6.3847 | class 5.5585 | dVQ 0.4551 | tVQ 0.3711 | lam_eff 0.5000 =====
+Epoch 15 codebook perplexity - Drug: 73.0365 | Target: 97.3926
+Evaluate codebook perplexity - Drug: 47.1282 | Target: 92.6978
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.7991544784087805
+AUPR: 0.13614448785820296
+MCC: 0.0
+===== Epoch 16 | total 6.2406 | class 5.4466 | dVQ 0.4227 | tVQ 0.3712 | lam_eff 0.5000 =====
+Epoch 16 codebook perplexity - Drug: 73.4358 | Target: 97.8127
+Evaluate codebook perplexity - Drug: 47.2570 | Target: 94.6545
+TP: 2; TN: 3660; FP: 1; FN: 42
+Accuracy: 0.9883940620782726
+Precision: 0.6666666666666666
+Recall: 0.045454545454545456
+Specificity: 0.9997268505872713
+F1 Score: 0.08510638297872342
+AUROC: 0.7873531821906583
+AUPR: 0.16663080403466254
+MCC: 0.17207073507930193
+===== Epoch 17 | total 6.0845 | class 5.3130 | dVQ 0.4073 | tVQ 0.3642 | lam_eff 0.5000 =====
+Epoch 17 codebook perplexity - Drug: 73.9018 | Target: 97.7986
+Evaluate codebook perplexity - Drug: 46.7595 | Target: 93.7202
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.7987075066424971
+AUPR: 0.09922186784980148
+MCC: 0.0
+===== Epoch 18 | total 5.8150 | class 5.0884 | dVQ 0.3782 | tVQ 0.3484 | lam_eff 0.5000 =====
+Epoch 18 codebook perplexity - Drug: 74.1021 | Target: 98.4817
+Evaluate codebook perplexity - Drug: 46.7817 | Target: 94.7516
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.8010416925330883
+AUPR: 0.10546097808874837
+MCC: 0.0
+===== Epoch 19 | total 5.7245 | class 5.0263 | dVQ 0.3657 | tVQ 0.3325 | lam_eff 0.5000 =====
+Epoch 19 codebook perplexity - Drug: 74.6610 | Target: 99.0662
+Evaluate codebook perplexity - Drug: 47.9816 | Target: 95.1750
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.8047757691639146
+AUPR: 0.11999744257343035
+MCC: 0.0
+===== Epoch 20 | total 5.6457 | class 4.9706 | dVQ 0.3427 | tVQ 0.3324 | lam_eff 0.5000 =====
+Epoch 20 codebook perplexity - Drug: 75.1103 | Target: 99.4234
+Evaluate codebook perplexity - Drug: 48.7551 | Target: 96.3112
+TP: 0; TN: 3661; FP: 0; FN: 44
+Accuracy: 0.9881241565452091
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.8040152963671128
+AUPR: 0.1255210831672168
+MCC: 0.0
+==========Testing==========
+Best epoch: 16
+Best metric: 0.17207073507930193
+Evaluate codebook perplexity - Drug: 49.0940 | Target: 95.9949
+TP: 0; TN: 3670; FP: 0; FN: 36
+Accuracy: 0.9902860226659471
+Precision: 0.0
+Recall: 0.0
+Specificity: 1.0
+F1 Score: 0.0
+AUROC: 0.863623978201635
+AUPR: 0.17202463063029969
+MCC: 0.0
+Random seed: 0
+Running on cuda:0
+Dataset: /raid/data/smunoz/catnip/EviCYP/data_splits
+Batch size: 128
+Model: CYPClassifier(
+  (drug_encoder): Sequential(
+    (0): Linear(in_features=1236, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Dropout(p=0.25, inplace=False)
+  )
+  (target_encoder): TargetLAEncoder(
+    (feature_conv): Conv1d(1152, 768, kernel_size=(9,), stride=(1,), padding=(4,))
+    (feature_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (attn_conv): Conv1d(1152, 768, kernel_size=(9,), stride=(1,), padding=(4,))
+    (dropout): Dropout(p=0.25, inplace=False)
+    (proj): Sequential(
+      (0): Linear(in_features=1536, out_features=1024, bias=True)
+      (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+      (3): Dropout(p=0.25, inplace=False)
+    )
+  )
+  (drug_vq): HardVectorQuantizer(
+    (codebook): Embedding(128, 4)
+  )
+  (target_vq): HardVectorQuantizer(
+    (codebook): Embedding(128, 4)
+  )
+  (evidence_head): Sequential(
+    (0): Linear(in_features=2048, out_features=512, bias=True)
+    (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Dropout(p=0.25, inplace=False)
+    (4): Linear(in_features=512, out_features=2, bias=True)
+  )
+)
+Evaluate codebook perplexity - Drug: 15.8353 | Target: 22.0689
+TP: 44; TN: 0; FP: 3661; FN: 0
+Accuracy: 0.011875843454790824
+Precision: 0.011875843454790824
+Recall: 1.0
+Specificity: 0.0
+F1 Score: 0.023472926113630305
+AUROC: 0.49142372923443667
+AUPR: 0.011382510909362781
+MCC: 0.0
+Number of epochs: 20
+Weight decay: 2e-05
+Use metric: MCC
+===== Epoch 1 | total 62.5483 | class 44.2408 | dVQ 8.5121 | tVQ 9.7954 | lam_eff 0.0500 =====
+Epoch 1 codebook perplexity - Drug: 53.4084 | Target: 49.7211
+Evaluate codebook perplexity - Drug: 42.4748 | Target: 34.3497
+TP: 0; TN: 3654; FP: 7; FN: 44
+Accuracy: 0.9862348178137652
+Precision: 0.0
+Recall: 0.0
+Specificity: 0.9980879541108987
+F1 Score: 0.0
+AUROC: 0.7447418738049713
+AUPR: 0.09173732817092041
+MCC: -0.004769710722749034
+===== Epoch 2 | total 41.1568 | class 33.2348 | dVQ 3.1782 | tVQ 4.7438 | lam_eff 0.1000 =====
+Epoch 2 codebook perplexity - Drug: 54.4963 | Target: 52.6176
+Evaluate codebook perplexity - Drug: 42.0244 | Target: 37.4286
+TP: 13; TN: 3608; FP: 53; FN: 31
+Accuracy: 0.977327935222672
+Precision: 0.19696969696969696
+Recall: 0.29545454545454547
+Specificity: 0.9855230811253756
+F1 Score: 0.23636363636363636
+AUROC: 0.7590449703260411
+AUPR: 0.15340635270470657
+MCC: 0.2301097109105258
+===== Epoch 3 | total 36.4277 | class 30.6655 | dVQ 2.4707 | tVQ 3.2914 | lam_eff 0.1500 =====
+Epoch 3 codebook perplexity - Drug: 56.7825 | Target: 59.4556
+Evaluate codebook perplexity - Drug: 48.0809 | Target: 46.1552
+TP: 12; TN: 3630; FP: 31; FN: 32
+Accuracy: 0.982995951417004
+Precision: 0.27906976744186046
+Recall: 0.2727272727272727
+Specificity: 0.9915323682054084
+F1 Score: 0.2758620689655172
+AUROC: 0.7785999851009411
+AUPR: 0.12363395394300869
+MCC: 0.2672782662208245
+===== Epoch 4 | total 34.6375 | class 29.8483 | dVQ 2.1469 | tVQ 2.6423 | lam_eff 0.2000 =====
+Epoch 4 codebook perplexity - Drug: 65.3851 | Target: 74.6900
+Evaluate codebook perplexity - Drug: 61.8872 | Target: 62.0403
+TP: 15; TN: 3613; FP: 48; FN: 29
+Accuracy: 0.9792172739541161
+Precision: 0.23809523809523808
+Recall: 0.3409090909090909
+Specificity: 0.9868888281890194
+F1 Score: 0.2803738317757009
+AUROC: 0.7560341188448263
+AUPR: 0.12707015283905038
+MCC: 0.27465793436771563
+===== Epoch 5 | total 31.8231 | class 27.9679 | dVQ 1.7905 | tVQ 2.0647 | lam_eff 0.2500 =====
+Epoch 5 codebook perplexity - Drug: 72.0942 | Target: 83.7587
+Evaluate codebook perplexity - Drug: 65.3444 | Target: 66.0918
+TP: 13; TN: 3632; FP: 29; FN: 31
+Accuracy: 0.9838056680161943
+Precision: 0.30952380952380953
+Recall: 0.29545454545454547
+Specificity: 0.9920786670308659
+F1 Score: 0.3023255813953489
+AUROC: 0.7875394204266097
+AUPR: 0.1298222846189768
+MCC: 0.29421927075302773
+===== Epoch 6 | total 30.4340 | class 26.9667 | dVQ 1.6719 | tVQ 1.7955 | lam_eff 0.3000 =====
+Epoch 6 codebook perplexity - Drug: 74.6116 | Target: 87.3712
+Evaluate codebook perplexity - Drug: 67.6347 | Target: 70.3923
+TP: 14; TN: 3628; FP: 33; FN: 30
+Accuracy: 0.982995951417004
+Precision: 0.2978723404255319
+Recall: 0.3181818181818182
+Specificity: 0.9909860693799508
+F1 Score: 0.3076923076923077
+AUROC: 0.7920463857366343
+AUPR: 0.13676044962548428
+MCC: 0.2992607787431893
+===== Epoch 7 | total 29.4713 | class 26.3516 | dVQ 1.5019 | tVQ 1.6178 | lam_eff 0.3500 =====
+Epoch 7 codebook perplexity - Drug: 76.5094 | Target: 90.2502
+Evaluate codebook perplexity - Drug: 70.2205 | Target: 75.3367
+TP: 16; TN: 3609; FP: 52; FN: 28
+Accuracy: 0.9784075573549258
+Precision: 0.23529411764705882
+Recall: 0.36363636363636365
+Specificity: 0.9857962305381044
+F1 Score: 0.2857142857142857
+AUROC: 0.7801147227533461
+AUPR: 0.14747169978277033
+MCC: 0.2820093504235193
+===== Epoch 8 | total 28.2206 | class 25.3645 | dVQ 1.3812 | tVQ 1.4750 | lam_eff 0.4000 =====
+Epoch 8 codebook perplexity - Drug: 78.7634 | Target: 91.8518
+Evaluate codebook perplexity - Drug: 72.9427 | Target: 77.5259
+TP: 14; TN: 3613; FP: 48; FN: 30
+Accuracy: 0.9789473684210527
+Precision: 0.22580645161290322
+Recall: 0.3181818181818182
+Specificity: 0.9868888281890194
+F1 Score: 0.2641509433962264
+AUROC: 0.7905564798490229
+AUPR: 0.16804732569166056
+MCC: 0.2576328243222469
+===== Epoch 9 | total 26.7664 | class 24.1109 | dVQ 1.2805 | tVQ 1.3750 | lam_eff 0.4500 =====
+Epoch 9 codebook perplexity - Drug: 80.6012 | Target: 93.7447
+Evaluate codebook perplexity - Drug: 73.7956 | Target: 81.4502
+TP: 14; TN: 3632; FP: 29; FN: 30
+Accuracy: 0.9840755735492578
+Precision: 0.32558139534883723
+Recall: 0.3181818181818182
+Specificity: 0.9920786670308659
+F1 Score: 0.3218390804597701
+AUROC: 0.7942688286856547
+AUPR: 0.14713336646702474
+MCC: 0.31380457595340083
+===== Epoch 10 | total 26.0402 | class 23.5998 | dVQ 1.1701 | tVQ 1.2703 | lam_eff 0.5000 =====
+Epoch 10 codebook perplexity - Drug: 81.1682 | Target: 94.9126
+Evaluate codebook perplexity - Drug: 74.0977 | Target: 83.5299
+TP: 12; TN: 3623; FP: 38; FN: 32
+Accuracy: 0.9811066126855601
+Precision: 0.24
+Recall: 0.2727272727272727
+Specificity: 0.989620322316307
+F1 Score: 0.2553191489361702
+AUROC: 0.7686176156539445
+AUPR: 0.11587028824647849
+MCC: 0.24630577646785287
+===== Epoch 11 | total 25.8759 | class 23.5022 | dVQ 1.1454 | tVQ 1.2282 | lam_eff 0.5000 =====
+Epoch 11 codebook perplexity - Drug: 81.7488 | Target: 94.9219
+Evaluate codebook perplexity - Drug: 75.9255 | Target: 82.8684
+TP: 15; TN: 3622; FP: 39; FN: 29
+Accuracy: 0.9816464237516869
+Precision: 0.2777777777777778
+Recall: 0.3409090909090909
+Specificity: 0.9893471729035782
+F1 Score: 0.3061224489795918
+AUROC: 0.7913697201460107
+AUPR: 0.1660191321587005
+MCC: 0.29852071264282065
+===== Epoch 12 | total 24.6428 | class 22.4039 | dVQ 1.0606 | tVQ 1.1783 | lam_eff 0.5000 =====
+Epoch 12 codebook perplexity - Drug: 82.0582 | Target: 95.3021
+Evaluate codebook perplexity - Drug: 75.8001 | Target: 82.5155
+TP: 13; TN: 3624; FP: 37; FN: 31
+Accuracy: 0.9816464237516869
+Precision: 0.26
+Recall: 0.29545454545454547
+Specificity: 0.9898934717290357
+F1 Score: 0.27659574468085113
+AUROC: 0.7863412877753223
+AUPR: 0.13319330354528877
+MCC: 0.2678997873957609
+===== Epoch 13 | total 24.0344 | class 21.8690 | dVQ 1.0317 | tVQ 1.1337 | lam_eff 0.5000 =====
+Epoch 13 codebook perplexity - Drug: 82.6751 | Target: 96.4339
+Evaluate codebook perplexity - Drug: 76.5725 | Target: 85.8986
+TP: 14; TN: 3633; FP: 28; FN: 30
+Accuracy: 0.9843454790823212
+Precision: 0.3333333333333333
+Recall: 0.3181818181818182
+Specificity: 0.9923518164435946
+F1 Score: 0.3255813953488372
+AUROC: 0.7888617119018649
+AUPR: 0.16681262774711697
+MCC: 0.3177545255868893
+===== Epoch 14 | total 22.3172 | class 20.3137 | dVQ 0.9297 | tVQ 1.0737 | lam_eff 0.5000 =====
+Epoch 14 codebook perplexity - Drug: 82.7905 | Target: 97.2094
+Evaluate codebook perplexity - Drug: 76.7387 | Target: 87.2901
+TP: 11; TN: 3630; FP: 31; FN: 33
+Accuracy: 0.9827260458839406
+Precision: 0.2619047619047619
+Recall: 0.25
+Specificity: 0.9915323682054084
+F1 Score: 0.2558139534883721
+AUROC: 0.7888927516078568
+AUPR: 0.1845545149625783
+MCC: 0.24714876108530454
+===== Epoch 15 | total 21.4910 | class 19.5592 | dVQ 0.8911 | tVQ 1.0406 | lam_eff 0.5000 =====
+Epoch 15 codebook perplexity - Drug: 83.5010 | Target: 97.4239
+Evaluate codebook perplexity - Drug: 76.7688 | Target: 86.9807
+TP: 17; TN: 3621; FP: 40; FN: 27
+Accuracy: 0.9819163292847504
+Precision: 0.2982456140350877
+Recall: 0.38636363636363635
+Specificity: 0.9890740234908495
+F1 Score: 0.33663366336633666
+AUROC: 0.7870738248367312
+AUPR: 0.22436323163762742
+MCC: 0.33044500709702584
+===== Epoch 16 | total 20.8103 | class 18.9664 | dVQ 0.8571 | tVQ 0.9868 | lam_eff 0.5000 =====
+Epoch 16 codebook perplexity - Drug: 83.5457 | Target: 97.3969
+Evaluate codebook perplexity - Drug: 74.8976 | Target: 87.9822
+TP: 16; TN: 3629; FP: 32; FN: 28
+Accuracy: 0.9838056680161943
+Precision: 0.3333333333333333
+Recall: 0.36363636363636365
+Specificity: 0.9912592187926796
+F1 Score: 0.34782608695652173
+AUROC: 0.7901281319063345
+AUPR: 0.22516856503083071
+MCC: 0.3399724283376569
+===== Epoch 17 | total 19.6297 | class 17.9161 | dVQ 0.7671 | tVQ 0.9466 | lam_eff 0.5000 =====
+Epoch 17 codebook perplexity - Drug: 82.0433 | Target: 98.0490
+Evaluate codebook perplexity - Drug: 76.6542 | Target: 87.5007
+TP: 15; TN: 3626; FP: 35; FN: 29
+Accuracy: 0.9827260458839406
+Precision: 0.3
+Recall: 0.3409090909090909
+Specificity: 0.9904397705544933
+F1 Score: 0.3191489361702128
+AUROC: 0.7942191651560676
+AUPR: 0.2153159482785158
+MCC: 0.3110878092515771
+===== Epoch 18 | total 18.5911 | class 16.9789 | dVQ 0.7295 | tVQ 0.8826 | lam_eff 0.5000 =====
+Epoch 18 codebook perplexity - Drug: 82.4038 | Target: 98.3647
+Evaluate codebook perplexity - Drug: 75.5498 | Target: 88.5168
+TP: 16; TN: 3630; FP: 31; FN: 28
+Accuracy: 0.9840755735492578
+Precision: 0.3404255319148936
+Recall: 0.36363636363636365
+Specificity: 0.9915323682054084
+F1 Score: 0.3516483516483517
+AUROC: 0.7832186933525366
+AUPR: 0.21442605891893962
+MCC: 0.34378755217572277
+===== Epoch 19 | total 18.6340 | class 17.0660 | dVQ 0.6979 | tVQ 0.8700 | lam_eff 0.5000 =====
+Epoch 19 codebook perplexity - Drug: 82.6281 | Target: 98.7582
+Evaluate codebook perplexity - Drug: 75.8758 | Target: 87.9988
+TP: 16; TN: 3634; FP: 27; FN: 28
+Accuracy: 0.9851551956815114
+Precision: 0.37209302325581395
+Recall: 0.36363636363636365
+Specificity: 0.9926249658563234
+F1 Score: 0.367816091954023
+AUROC: 0.7949268704526831
+AUPR: 0.21077179576600943
+MCC: 0.3603308856859772
+===== Epoch 20 | total 17.9782 | class 16.4761 | dVQ 0.6556 | tVQ 0.8465 | lam_eff 0.5000 =====
+Epoch 20 codebook perplexity - Drug: 82.9920 | Target: 98.5604
+Evaluate codebook perplexity - Drug: 76.6747 | Target: 89.0111
+TP: 16; TN: 3634; FP: 27; FN: 28
+Accuracy: 0.9851551956815114
+Precision: 0.37209302325581395
+Recall: 0.36363636363636365
+Specificity: 0.9926249658563234
+F1 Score: 0.367816091954023
+AUROC: 0.788749968960294
+AUPR: 0.225716069078093
+MCC: 0.3603308856859772
+==========Testing==========
+Best epoch: 19
+Best metric: 0.3603308856859772
+Evaluate codebook perplexity - Drug: 77.0901 | Target: 88.5734
+TP: 13; TN: 3646; FP: 24; FN: 23
+Accuracy: 0.9873178629249865
+Precision: 0.35135135135135137
+Recall: 0.3611111111111111
+Specificity: 0.9934604904632153
+F1 Score: 0.3561643835616438
+AUROC: 0.8268468059339993
+AUPR: 0.24227846521235938
+MCC: 0.34979493258847644
+Random seed: 0
+Running on cuda:0
+Dataset: /raid/data/smunoz/catnip/EviCYP/data_splits
+Batch size: 128
+Model: CYPClassifier(
+  (drug_encoder): Sequential(
+    (0): Linear(in_features=1236, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Dropout(p=0.25, inplace=False)
+  )
+  (target_encoder): TargetLAEncoder(
+    (feature_conv): Conv1d(1152, 768, kernel_size=(9,), stride=(1,), padding=(4,))
+    (feature_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (attn_conv): Conv1d(1152, 768, kernel_size=(9,), stride=(1,), padding=(4,))
+    (dropout): Dropout(p=0.25, inplace=False)
+    (proj): Sequential(
+      (0): Linear(in_features=1536, out_features=1024, bias=True)
+      (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+      (3): Dropout(p=0.25, inplace=False)
+    )
+  )
+  (drug_vq): HardVectorQuantizer(
+    (codebook): Embedding(128, 4)
+  )
+  (target_vq): HardVectorQuantizer(
+    (codebook): Embedding(128, 4)
+  )
+  (evidence_head): Sequential(
+    (0): Linear(in_features=2048, out_features=512, bias=True)
+    (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Dropout(p=0.25, inplace=False)
+    (4): Linear(in_features=512, out_features=2, bias=True)
+  )
+)
+Evaluate codebook perplexity - Drug: 15.8353 | Target: 22.0689
+TP: 44; TN: 0; FP: 3661; FN: 0
+Accuracy: 0.011875843454790824
+Precision: 0.011875843454790824
+Recall: 1.0
+Specificity: 0.0
+F1 Score: 0.023472926113630305
+AUROC: 0.49142372923443667
+AUPR: 0.011382510909362781
+MCC: 0.0
+Number of epochs: 20
+Weight decay: 2e-05
+Use metric: MCC
+===== Epoch 1 | total 151.1382 | class 127.7846 | dVQ 12.2714 | tVQ 11.0822 | lam_eff 0.0500 =====
+Epoch 1 codebook perplexity - Drug: 54.4675 | Target: 50.9665
+Evaluate codebook perplexity - Drug: 44.4918 | Target: 39.2560
+TP: 30; TN: 2749; FP: 912; FN: 14
+Accuracy: 0.7500674763832659
+Precision: 0.03184713375796178
+Recall: 0.6818181818181818
+Specificity: 0.7508877355913685
+F1 Score: 0.060851926977687626
+AUROC: 0.7885078592535572
+AUPR: 0.041751245665591914
+MCC: 0.10764730045649228
+===== Epoch 2 | total 85.8763 | class 73.0971 | dVQ 6.0971 | tVQ 6.6821 | lam_eff 0.1000 =====
+Epoch 2 codebook perplexity - Drug: 55.5698 | Target: 52.5308
+Evaluate codebook perplexity - Drug: 45.2864 | Target: 43.0626
+TP: 25; TN: 3025; FP: 636; FN: 19
+Accuracy: 0.8232118758434548
+Precision: 0.037821482602118005
+Recall: 0.5681818181818182
+Specificity: 0.826276973504507
+F1 Score: 0.07092198581560284
+AUROC: 0.7856149586551116
+AUPR: 0.04483181089918269
+MCC: 0.11161043195341355
+===== Epoch 3 | total 69.0095 | class 59.8413 | dVQ 4.1826 | tVQ 4.9856 | lam_eff 0.1500 =====
+Epoch 3 codebook perplexity - Drug: 62.0357 | Target: 58.5001
+Evaluate codebook perplexity - Drug: 55.7237 | Target: 57.0734
+TP: 23; TN: 3239; FP: 422; FN: 21
+Accuracy: 0.8804318488529015
+Precision: 0.051685393258426963
+Recall: 0.5227272727272727
+Specificity: 0.8847309478284622
+F1 Score: 0.09406952965235174
+AUROC: 0.8064053537284894
+AUPR: 0.05185998554040707
+MCC: 0.13577520943527013
+===== Epoch 4 | total 61.2111 | class 53.8818 | dVQ 3.3603 | tVQ 3.9690 | lam_eff 0.2000 =====
+Epoch 4 codebook perplexity - Drug: 73.4160 | Target: 69.5074
+Evaluate codebook perplexity - Drug: 69.7870 | Target: 68.1703
+TP: 22; TN: 3287; FP: 374; FN: 22
+Accuracy: 0.8931174089068826
+Precision: 0.05555555555555555
+Recall: 0.5
+Specificity: 0.8978421196394428
+F1 Score: 0.09999999999999999
+AUROC: 0.8070013160835341
+AUPR: 0.04648822810444922
+MCC: 0.13948932934602992
+===== Epoch 5 | total 53.7185 | class 47.2319 | dVQ 2.8703 | tVQ 3.6163 | lam_eff 0.2500 =====
+Epoch 5 codebook perplexity - Drug: 81.3207 | Target: 78.5903
+Evaluate codebook perplexity - Drug: 74.8054 | Target: 73.9574
+TP: 23; TN: 3317; FP: 344; FN: 21
+Accuracy: 0.9014844804318488
+Precision: 0.06267029972752043
+Recall: 0.5227272727272727
+Specificity: 0.9060366020213056
+F1 Score: 0.1119221411192214
+AUROC: 0.8010292766506916
+AUPR: 0.051214528247127605
+MCC: 0.1554777300526063
+===== Epoch 6 | total 52.9038 | class 46.8323 | dVQ 2.8898 | tVQ 3.1817 | lam_eff 0.3000 =====
+Epoch 6 codebook perplexity - Drug: 83.7662 | Target: 82.7892
+Evaluate codebook perplexity - Drug: 77.7790 | Target: 75.4010
+TP: 23; TN: 3270; FP: 391; FN: 21
+Accuracy: 0.8887989203778678
+Precision: 0.05555555555555555
+Recall: 0.5227272727272727
+Specificity: 0.8931985796230538
+F1 Score: 0.10043668122270741
+AUROC: 0.816238732586725
+AUPR: 0.0683120016640202
+MCC: 0.14301381971687027
+===== Epoch 7 | total 46.7720 | class 41.1242 | dVQ 2.6544 | tVQ 2.9935 | lam_eff 0.3500 =====
+Epoch 7 codebook perplexity - Drug: 85.7135 | Target: 86.7364
+Evaluate codebook perplexity - Drug: 78.5332 | Target: 77.7029
+TP: 18; TN: 3426; FP: 235; FN: 26
+Accuracy: 0.9295546558704454
+Precision: 0.07114624505928854
+Recall: 0.4090909090909091
+Specificity: 0.9358098880087408
+F1 Score: 0.12121212121212123
+AUROC: 0.8034069181296715
+AUPR: 0.06541577970605515
+MCC: 0.14812376645097766
+===== Epoch 8 | total 43.5052 | class 38.0466 | dVQ 2.5950 | tVQ 2.8636 | lam_eff 0.4000 =====
+Epoch 8 codebook perplexity - Drug: 86.9785 | Target: 89.4135
+Evaluate codebook perplexity - Drug: 79.7241 | Target: 79.3290
+TP: 20; TN: 3381; FP: 280; FN: 24
+Accuracy: 0.9179487179487179
+Precision: 0.06666666666666667
+Recall: 0.45454545454545453
+Specificity: 0.9235181644359465
+F1 Score: 0.11627906976744184
+AUROC: 0.8283380099823695
+AUPR: 0.07819716165185814
+MCC: 0.1501315278983134
+===== Epoch 9 | total 39.0412 | class 34.0701 | dVQ 2.3443 | tVQ 2.6268 | lam_eff 0.4500 =====
+Epoch 9 codebook perplexity - Drug: 87.5021 | Target: 90.9520
+Evaluate codebook perplexity - Drug: 80.0295 | Target: 82.9564
+TP: 18; TN: 3504; FP: 157; FN: 26
+Accuracy: 0.9506072874493927
+Precision: 0.10285714285714286
+Recall: 0.4090909090909091
+Specificity: 0.9571155422015842
+F1 Score: 0.16438356164383564
+AUROC: 0.8001167092945295
+AUPR: 0.07016112668229836
+MCC: 0.18700181272694494
+===== Epoch 10 | total 42.2878 | class 37.3270 | dVQ 2.4018 | tVQ 2.5590 | lam_eff 0.5000 =====
+Epoch 10 codebook perplexity - Drug: 88.8849 | Target: 92.8963
+Evaluate codebook perplexity - Drug: 80.8116 | Target: 83.4096
+TP: 18; TN: 3418; FP: 243; FN: 26
+Accuracy: 0.927395411605938
+Precision: 0.06896551724137931
+Recall: 0.4090909090909091
+Specificity: 0.9336246927069107
+F1 Score: 0.1180327868852459
+AUROC: 0.8032330957761167
+AUPR: 0.07509195252330506
+MCC: 0.1450802359907214
+===== Epoch 11 | total 37.0157 | class 32.1771 | dVQ 2.4223 | tVQ 2.4163 | lam_eff 0.5000 =====
+Epoch 11 codebook perplexity - Drug: 89.2543 | Target: 93.9554
+Evaluate codebook perplexity - Drug: 80.6798 | Target: 83.6492
+TP: 20; TN: 3467; FP: 194; FN: 24
+Accuracy: 0.9411605937921728
+Precision: 0.09345794392523364
+Recall: 0.45454545454545453
+Specificity: 0.9470090139306201
+F1 Score: 0.1550387596899225
+AUROC: 0.8131968413995182
+AUPR: 0.07876786816283411
+MCC: 0.18646136307023145
+===== Epoch 12 | total 31.2995 | class 26.9679 | dVQ 2.0926 | tVQ 2.2390 | lam_eff 0.5000 =====
+Epoch 12 codebook perplexity - Drug: 89.6426 | Target: 94.9893
+Evaluate codebook perplexity - Drug: 80.3705 | Target: 84.3898
+TP: 16; TN: 3501; FP: 160; FN: 28
+Accuracy: 0.9492577597840756
+Precision: 0.09090909090909091
+Recall: 0.36363636363636365
+Specificity: 0.956296093963398
+F1 Score: 0.14545454545454545
+AUROC: 0.8143018549328301
+AUPR: 0.08485511472801195
+MCC: 0.16293048177857886
+===== Epoch 13 | total 28.2092 | class 24.2415 | dVQ 1.8938 | tVQ 2.0739 | lam_eff 0.5000 =====
+Epoch 13 codebook perplexity - Drug: 89.8977 | Target: 95.6872
+Evaluate codebook perplexity - Drug: 81.4543 | Target: 84.0184
+TP: 16; TN: 3527; FP: 134; FN: 28
+Accuracy: 0.9562753036437247
+Precision: 0.10666666666666667
+Recall: 0.36363636363636365
+Specificity: 0.9633979786943458
+F1 Score: 0.16494845360824745
+AUROC: 0.8117255593355018
+AUPR: 0.07375273563448087
+MCC: 0.17974388798416457
+===== Epoch 14 | total 26.6434 | class 22.9287 | dVQ 1.7033 | tVQ 2.0115 | lam_eff 0.5000 =====
+Epoch 14 codebook perplexity - Drug: 89.6431 | Target: 96.8815
+Evaluate codebook perplexity - Drug: 81.9721 | Target: 85.4397
+TP: 18; TN: 3527; FP: 134; FN: 26
+Accuracy: 0.9568151147098516
+Precision: 0.11842105263157894
+Recall: 0.4090909090909091
+Specificity: 0.9633979786943458
+F1 Score: 0.1836734693877551
+AUROC: 0.8182252737702069
+AUPR: 0.08236625250521175
+MCC: 0.2034324016370278
+===== Epoch 15 | total 23.1221 | class 19.6522 | dVQ 1.5409 | tVQ 1.9290 | lam_eff 0.5000 =====
+Epoch 15 codebook perplexity - Drug: 89.2918 | Target: 97.4613
+Evaluate codebook perplexity - Drug: 81.3099 | Target: 85.6034
+TP: 16; TN: 3540; FP: 121; FN: 28
+Accuracy: 0.9597840755735493
+Precision: 0.11678832116788321
+Recall: 0.36363636363636365
+Specificity: 0.9669489210598197
+F1 Score: 0.17679558011049726
+AUROC: 0.8113406669812024
+AUPR: 0.0797035456414553
+MCC: 0.18977413222692258
+===== Epoch 16 | total 21.9453 | class 18.6773 | dVQ 1.4247 | tVQ 1.8432 | lam_eff 0.5000 =====
+Epoch 16 codebook perplexity - Drug: 89.5369 | Target: 97.8062
+Evaluate codebook perplexity - Drug: 80.8282 | Target: 85.5592
+TP: 16; TN: 3541; FP: 120; FN: 28
+Accuracy: 0.9600539811066127
+Precision: 0.11764705882352941
+Recall: 0.36363636363636365
+Specificity: 0.9672220704725485
+F1 Score: 0.17777777777777776
+AUROC: 0.8237627573191626
+AUPR: 0.09231425928674059
+MCC: 0.19060122366796275
+===== Epoch 17 | total 22.6788 | class 19.4829 | dVQ 1.4090 | tVQ 1.7868 | lam_eff 0.5000 =====
+Epoch 17 codebook perplexity - Drug: 90.3532 | Target: 98.6203
+Evaluate codebook perplexity - Drug: 81.9410 | Target: 86.0053
+TP: 17; TN: 3547; FP: 114; FN: 27
+Accuracy: 0.9619433198380567
+Precision: 0.1297709923664122
+Recall: 0.38636363636363635
+Specificity: 0.9688609669489211
+F1 Score: 0.19428571428571426
+AUROC: 0.815506195525316
+AUPR: 0.07693392110223078
+MCC: 0.20836094511974404
+===== Epoch 18 | total 20.5949 | class 17.5072 | dVQ 1.3399 | tVQ 1.7478 | lam_eff 0.5000 =====
+Epoch 18 codebook perplexity - Drug: 90.9245 | Target: 99.6545
+Evaluate codebook perplexity - Drug: 81.8864 | Target: 85.8133
+TP: 16; TN: 3551; FP: 110; FN: 28
+Accuracy: 0.962753036437247
+Precision: 0.12698412698412698
+Recall: 0.36363636363636365
+Specificity: 0.9699535645998361
+F1 Score: 0.18823529411764706
+AUROC: 0.8126939981624494
+AUPR: 0.07489168302743676
+MCC: 0.19937606068015967
+===== Epoch 19 | total 19.3459 | class 16.4132 | dVQ 1.2505 | tVQ 1.6822 | lam_eff 0.5000 =====
+Epoch 19 codebook perplexity - Drug: 91.1833 | Target: 100.2441
+Evaluate codebook perplexity - Drug: 82.3557 | Target: 88.1112
+TP: 16; TN: 3568; FP: 93; FN: 28
+Accuracy: 0.9673414304993252
+Precision: 0.14678899082568808
+Recall: 0.36363636363636365
+Specificity: 0.9745971046162251
+F1 Score: 0.20915032679738563
+AUROC: 0.8167229520001986
+AUPR: 0.08118241980132546
+MCC: 0.21683016039867864
+===== Epoch 20 | total 18.8850 | class 16.0543 | dVQ 1.1834 | tVQ 1.6473 | lam_eff 0.5000 =====
+Epoch 20 codebook perplexity - Drug: 91.0344 | Target: 100.8452
+Evaluate codebook perplexity - Drug: 81.1047 | Target: 88.3306
+TP: 12; TN: 3574; FP: 87; FN: 32
+Accuracy: 0.9678812415654521
+Precision: 0.12121212121212122
+Recall: 0.2727272727272727
+Specificity: 0.9762360010925977
+F1 Score: 0.16783216783216784
+AUROC: 0.8065108887288619
+AUPR: 0.07288247750817094
+MCC: 0.16723648481418807
+==========Testing==========
+Best epoch: 19
+Best metric: 0.21683016039867864
+Evaluate codebook perplexity - Drug: 81.4839 | Target: 88.4217
+TP: 12; TN: 3583; FP: 87; FN: 24
+Accuracy: 0.9700485698866703
+Precision: 0.12121212121212122
+Recall: 0.3333333333333333
+Specificity: 0.9762942779291554
+F1 Score: 0.17777777777777776
+AUROC: 0.8426127762640024
+AUPR: 0.11114059380844712
+MCC: 0.18833598003007357
+Random seed: 0
+Running on cuda:0
+Dataset: /raid/data/smunoz/catnip/EviCYP/data_splits
+Batch size: 128
+Model: CYPClassifier(
+  (drug_encoder): Sequential(
+    (0): Linear(in_features=1236, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Dropout(p=0.25, inplace=False)
+  )
+  (target_encoder): TargetLAEncoder(
+    (feature_conv): Conv1d(1152, 768, kernel_size=(9,), stride=(1,), padding=(4,))
+    (feature_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (attn_conv): Conv1d(1152, 768, kernel_size=(9,), stride=(1,), padding=(4,))
+    (dropout): Dropout(p=0.25, inplace=False)
+    (proj): Sequential(
+      (0): Linear(in_features=1536, out_features=1024, bias=True)
+      (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+      (3): Dropout(p=0.25, inplace=False)
+    )
+  )
+  (drug_vq): HardVectorQuantizer(
+    (codebook): Embedding(128, 4)
+  )
+  (target_vq): HardVectorQuantizer(
+    (codebook): Embedding(128, 4)
+  )
+  (evidence_head): Sequential(
+    (0): Linear(in_features=2048, out_features=512, bias=True)
+    (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Dropout(p=0.25, inplace=False)
+    (4): Linear(in_features=512, out_features=2, bias=True)
+  )
+)
+Evaluate codebook perplexity - Drug: 15.8353 | Target: 22.0689
+TP: 44; TN: 0; FP: 3661; FN: 0
+Accuracy: 0.011875843454790824
+Precision: 0.011875843454790824
+Recall: 1.0
+Specificity: 0.0
+F1 Score: 0.023472926113630305
+AUROC: 0.49142372923443667
+AUPR: 0.011382510909362781
+MCC: 0.0
+Number of epochs: 20
+Weight decay: 2e-05
+Use metric: MCC
+===== Epoch 1 | total 151.1382 | class 127.7846 | dVQ 12.2714 | tVQ 11.0822 | lam_eff 0.0500 =====
+Epoch 1 codebook perplexity - Drug: 54.4675 | Target: 50.9665
+Evaluate codebook perplexity - Drug: 44.4918 | Target: 39.2560
+TP: 30; TN: 2749; FP: 912; FN: 14
+Accuracy: 0.7500674763832659
+Precision: 0.03184713375796178
+Recall: 0.6818181818181818
+Specificity: 0.7508877355913685
+F1 Score: 0.060851926977687626
+AUROC: 0.7885078592535572
+AUPR: 0.041751245665591914
+MCC: 0.10764730045649228
+===== Epoch 2 | total 85.8763 | class 73.0971 | dVQ 6.0971 | tVQ 6.6821 | lam_eff 0.1000 =====
+Epoch 2 codebook perplexity - Drug: 55.5698 | Target: 52.5308
+Evaluate codebook perplexity - Drug: 45.2864 | Target: 43.0626
+TP: 25; TN: 3025; FP: 636; FN: 19
+Accuracy: 0.8232118758434548
+Precision: 0.037821482602118005
+Recall: 0.5681818181818182
+Specificity: 0.826276973504507
+F1 Score: 0.07092198581560284
+AUROC: 0.7856149586551116
+AUPR: 0.04483181089918269
+MCC: 0.11161043195341355
+===== Epoch 3 | total 69.0095 | class 59.8413 | dVQ 4.1826 | tVQ 4.9856 | lam_eff 0.1500 =====
+Epoch 3 codebook perplexity - Drug: 62.0357 | Target: 58.5001
+Evaluate codebook perplexity - Drug: 55.7237 | Target: 57.0734
+TP: 23; TN: 3239; FP: 422; FN: 21
+Accuracy: 0.8804318488529015
+Precision: 0.051685393258426963
+Recall: 0.5227272727272727
+Specificity: 0.8847309478284622
+F1 Score: 0.09406952965235174
+AUROC: 0.8064053537284894
+AUPR: 0.05185998554040707
+MCC: 0.13577520943527013
+===== Epoch 4 | total 61.2111 | class 53.8818 | dVQ 3.3603 | tVQ 3.9690 | lam_eff 0.2000 =====
+Epoch 4 codebook perplexity - Drug: 73.4160 | Target: 69.5074
+Evaluate codebook perplexity - Drug: 69.7870 | Target: 68.1703
+TP: 22; TN: 3287; FP: 374; FN: 22
+Accuracy: 0.8931174089068826
+Precision: 0.05555555555555555
+Recall: 0.5
+Specificity: 0.8978421196394428
+F1 Score: 0.09999999999999999
+AUROC: 0.8070013160835341
+AUPR: 0.04648822810444922
+MCC: 0.13948932934602992
+===== Epoch 5 | total 53.7185 | class 47.2319 | dVQ 2.8703 | tVQ 3.6163 | lam_eff 0.2500 =====
+Epoch 5 codebook perplexity - Drug: 81.3207 | Target: 78.5903
+Evaluate codebook perplexity - Drug: 74.8054 | Target: 73.9574
+TP: 23; TN: 3317; FP: 344; FN: 21
+Accuracy: 0.9014844804318488
+Precision: 0.06267029972752043
+Recall: 0.5227272727272727
+Specificity: 0.9060366020213056
+F1 Score: 0.1119221411192214
+AUROC: 0.8010292766506916
+AUPR: 0.051214528247127605
+MCC: 0.1554777300526063
+===== Epoch 6 | total 52.9038 | class 46.8323 | dVQ 2.8898 | tVQ 3.1817 | lam_eff 0.3000 =====
+Epoch 6 codebook perplexity - Drug: 83.7662 | Target: 82.7892
+Evaluate codebook perplexity - Drug: 77.7790 | Target: 75.4010
+TP: 23; TN: 3270; FP: 391; FN: 21
+Accuracy: 0.8887989203778678
+Precision: 0.05555555555555555
+Recall: 0.5227272727272727
+Specificity: 0.8931985796230538
+F1 Score: 0.10043668122270741
+AUROC: 0.816238732586725
+AUPR: 0.0683120016640202
+MCC: 0.14301381971687027
+===== Epoch 7 | total 46.7720 | class 41.1242 | dVQ 2.6544 | tVQ 2.9935 | lam_eff 0.3500 =====
+Epoch 7 codebook perplexity - Drug: 85.7135 | Target: 86.7364
+Evaluate codebook perplexity - Drug: 78.5332 | Target: 77.7029
+TP: 18; TN: 3426; FP: 235; FN: 26
+Accuracy: 0.9295546558704454
+Precision: 0.07114624505928854
+Recall: 0.4090909090909091
+Specificity: 0.9358098880087408
+F1 Score: 0.12121212121212123
+AUROC: 0.8034069181296715
+AUPR: 0.06541577970605515
+MCC: 0.14812376645097766
+===== Epoch 8 | total 43.5052 | class 38.0466 | dVQ 2.5950 | tVQ 2.8636 | lam_eff 0.4000 =====
+Epoch 8 codebook perplexity - Drug: 86.9785 | Target: 89.4135
+Evaluate codebook perplexity - Drug: 79.7241 | Target: 79.3290
+TP: 20; TN: 3381; FP: 280; FN: 24
+Accuracy: 0.9179487179487179
+Precision: 0.06666666666666667
+Recall: 0.45454545454545453
+Specificity: 0.9235181644359465
+F1 Score: 0.11627906976744184
+AUROC: 0.8283380099823695
+AUPR: 0.07819716165185814
+MCC: 0.1501315278983134
+===== Epoch 9 | total 39.0412 | class 34.0701 | dVQ 2.3443 | tVQ 2.6268 | lam_eff 0.4500 =====
+Epoch 9 codebook perplexity - Drug: 87.5021 | Target: 90.9520
+Evaluate codebook perplexity - Drug: 80.0295 | Target: 82.9564
+TP: 18; TN: 3504; FP: 157; FN: 26
+Accuracy: 0.9506072874493927
+Precision: 0.10285714285714286
+Recall: 0.4090909090909091
+Specificity: 0.9571155422015842
+F1 Score: 0.16438356164383564
+AUROC: 0.8001167092945295
+AUPR: 0.07016112668229836
+MCC: 0.18700181272694494
+===== Epoch 10 | total 42.2878 | class 37.3270 | dVQ 2.4018 | tVQ 2.5590 | lam_eff 0.5000 =====
+Epoch 10 codebook perplexity - Drug: 88.8849 | Target: 92.8963
+Evaluate codebook perplexity - Drug: 80.8116 | Target: 83.4096
+TP: 18; TN: 3418; FP: 243; FN: 26
+Accuracy: 0.927395411605938
+Precision: 0.06896551724137931
+Recall: 0.4090909090909091
+Specificity: 0.9336246927069107
+F1 Score: 0.1180327868852459
+AUROC: 0.8032330957761167
+AUPR: 0.07509195252330506
+MCC: 0.1450802359907214
+===== Epoch 11 | total 37.0157 | class 32.1771 | dVQ 2.4223 | tVQ 2.4163 | lam_eff 0.5000 =====
+Epoch 11 codebook perplexity - Drug: 89.2543 | Target: 93.9554
+Evaluate codebook perplexity - Drug: 80.6798 | Target: 83.6492
+TP: 20; TN: 3467; FP: 194; FN: 24
+Accuracy: 0.9411605937921728
+Precision: 0.09345794392523364
+Recall: 0.45454545454545453
+Specificity: 0.9470090139306201
+F1 Score: 0.1550387596899225
+AUROC: 0.8131968413995182
+AUPR: 0.07876786816283411
+MCC: 0.18646136307023145
+===== Epoch 12 | total 31.2995 | class 26.9679 | dVQ 2.0926 | tVQ 2.2390 | lam_eff 0.5000 =====
+Epoch 12 codebook perplexity - Drug: 89.6426 | Target: 94.9893
+Evaluate codebook perplexity - Drug: 80.3705 | Target: 84.3898
+TP: 16; TN: 3501; FP: 160; FN: 28
+Accuracy: 0.9492577597840756
+Precision: 0.09090909090909091
+Recall: 0.36363636363636365
+Specificity: 0.956296093963398
+F1 Score: 0.14545454545454545
+AUROC: 0.8143018549328301
+AUPR: 0.08485511472801195
+MCC: 0.16293048177857886
+===== Epoch 13 | total 28.2092 | class 24.2415 | dVQ 1.8938 | tVQ 2.0739 | lam_eff 0.5000 =====
+Epoch 13 codebook perplexity - Drug: 89.8977 | Target: 95.6872
+Evaluate codebook perplexity - Drug: 81.4543 | Target: 84.0184
+TP: 16; TN: 3527; FP: 134; FN: 28
+Accuracy: 0.9562753036437247
+Precision: 0.10666666666666667
+Recall: 0.36363636363636365
+Specificity: 0.9633979786943458
+F1 Score: 0.16494845360824745
+AUROC: 0.8117255593355018
+AUPR: 0.07375273563448087
+MCC: 0.17974388798416457
+===== Epoch 14 | total 26.6434 | class 22.9287 | dVQ 1.7033 | tVQ 2.0115 | lam_eff 0.5000 =====
+Epoch 14 codebook perplexity - Drug: 89.6431 | Target: 96.8815
+Evaluate codebook perplexity - Drug: 81.9721 | Target: 85.4397
+TP: 18; TN: 3527; FP: 134; FN: 26
+Accuracy: 0.9568151147098516
+Precision: 0.11842105263157894
+Recall: 0.4090909090909091
+Specificity: 0.9633979786943458
+F1 Score: 0.1836734693877551
+AUROC: 0.8182252737702069
+AUPR: 0.08236625250521175
+MCC: 0.2034324016370278
+===== Epoch 15 | total 23.1221 | class 19.6522 | dVQ 1.5409 | tVQ 1.9290 | lam_eff 0.5000 =====
+Epoch 15 codebook perplexity - Drug: 89.2918 | Target: 97.4613
+Evaluate codebook perplexity - Drug: 81.3099 | Target: 85.6034
+TP: 16; TN: 3540; FP: 121; FN: 28
+Accuracy: 0.9597840755735493
+Precision: 0.11678832116788321
+Recall: 0.36363636363636365
+Specificity: 0.9669489210598197
+F1 Score: 0.17679558011049726
+AUROC: 0.8113406669812024
+AUPR: 0.0797035456414553
+MCC: 0.18977413222692258
+===== Epoch 16 | total 21.9453 | class 18.6773 | dVQ 1.4247 | tVQ 1.8432 | lam_eff 0.5000 =====
+Epoch 16 codebook perplexity - Drug: 89.5369 | Target: 97.8062
+Evaluate codebook perplexity - Drug: 80.8282 | Target: 85.5592
+TP: 16; TN: 3541; FP: 120; FN: 28
+Accuracy: 0.9600539811066127
+Precision: 0.11764705882352941
+Recall: 0.36363636363636365
+Specificity: 0.9672220704725485
+F1 Score: 0.17777777777777776
+AUROC: 0.8237627573191626
+AUPR: 0.09231425928674059
+MCC: 0.19060122366796275
+===== Epoch 17 | total 22.6788 | class 19.4829 | dVQ 1.4090 | tVQ 1.7868 | lam_eff 0.5000 =====
+Epoch 17 codebook perplexity - Drug: 90.3532 | Target: 98.6203
+Evaluate codebook perplexity - Drug: 81.9410 | Target: 86.0053
+TP: 17; TN: 3547; FP: 114; FN: 27
+Accuracy: 0.9619433198380567
+Precision: 0.1297709923664122
+Recall: 0.38636363636363635
+Specificity: 0.9688609669489211
+F1 Score: 0.19428571428571426
+AUROC: 0.815506195525316
+AUPR: 0.07693392110223078
+MCC: 0.20836094511974404
+===== Epoch 18 | total 20.5949 | class 17.5072 | dVQ 1.3399 | tVQ 1.7478 | lam_eff 0.5000 =====
+Epoch 18 codebook perplexity - Drug: 90.9245 | Target: 99.6545
+Evaluate codebook perplexity - Drug: 81.8864 | Target: 85.8133
+TP: 16; TN: 3551; FP: 110; FN: 28
+Accuracy: 0.962753036437247
+Precision: 0.12698412698412698
+Recall: 0.36363636363636365
+Specificity: 0.9699535645998361
+F1 Score: 0.18823529411764706
+AUROC: 0.8126939981624494
+AUPR: 0.07489168302743676
+MCC: 0.19937606068015967
+===== Epoch 19 | total 19.3459 | class 16.4132 | dVQ 1.2505 | tVQ 1.6822 | lam_eff 0.5000 =====
+Epoch 19 codebook perplexity - Drug: 91.1833 | Target: 100.2441
+Evaluate codebook perplexity - Drug: 82.3557 | Target: 88.1112
+TP: 16; TN: 3568; FP: 93; FN: 28
+Accuracy: 0.9673414304993252
+Precision: 0.14678899082568808
+Recall: 0.36363636363636365
+Specificity: 0.9745971046162251
+F1 Score: 0.20915032679738563
+AUROC: 0.8167229520001986
+AUPR: 0.08118241980132546
+MCC: 0.21683016039867864
+===== Epoch 20 | total 18.8850 | class 16.0543 | dVQ 1.1834 | tVQ 1.6473 | lam_eff 0.5000 =====
+Epoch 20 codebook perplexity - Drug: 91.0344 | Target: 100.8452
+Evaluate codebook perplexity - Drug: 81.1047 | Target: 88.3306
+TP: 12; TN: 3574; FP: 87; FN: 32
+Accuracy: 0.9678812415654521
+Precision: 0.12121212121212122
+Recall: 0.2727272727272727
+Specificity: 0.9762360010925977
+F1 Score: 0.16783216783216784
+AUROC: 0.8065108887288619
+AUPR: 0.07288247750817094
+MCC: 0.16723648481418807
+==========Testing==========
+Best epoch: 19
+Best metric: 0.21683016039867864
+===== Finding Best Threshold on Validation Set =====
+Optimal Threshold: 0.110 | Best Val MCC: 0.1981
+========== Testing ==========
+Evaluate codebook perplexity - Drug: 81.4839 | Target: 88.4217
+TP: 17; TN: 3532; FP: 138; FN: 19
+Accuracy: 0.9576362655153805
+Precision: 0.10967741935483871
+Recall: 0.4722222222222222
+Specificity: 0.9623978201634877
+F1 Score: 0.17801047120418848
+AUROC: 0.8426127762640024
+AUPR: 0.11114059380844712
+MCC: 0.2129378413423233
+Random seed: 0
+Running on cuda:0
+Dataset: /raid/data/smunoz/catnip/EviCYP/data_splits
+Batch size: 128
+Model: CYPClassifier(
+  (drug_encoder): Sequential(
+    (0): Linear(in_features=1236, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Dropout(p=0.25, inplace=False)
+  )
+  (target_encoder): TargetLAEncoder(
+    (feature_conv): Conv1d(1152, 768, kernel_size=(9,), stride=(1,), padding=(4,))
+    (feature_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (attn_conv): Conv1d(1152, 768, kernel_size=(9,), stride=(1,), padding=(4,))
+    (dropout): Dropout(p=0.25, inplace=False)
+    (proj): Sequential(
+      (0): Linear(in_features=1536, out_features=1024, bias=True)
+      (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+      (3): Dropout(p=0.25, inplace=False)
+    )
+  )
+  (drug_vq): HardVectorQuantizer(
+    (codebook): Embedding(128, 4)
+  )
+  (target_vq): HardVectorQuantizer(
+    (codebook): Embedding(128, 4)
+  )
+  (evidence_head): Sequential(
+    (0): Linear(in_features=2048, out_features=512, bias=True)
+    (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Dropout(p=0.25, inplace=False)
+    (4): Linear(in_features=512, out_features=2, bias=True)
+  )
+)
+Evaluate codebook perplexity - Drug: 15.8353 | Target: 22.0689
+TP: 44; TN: 0; FP: 3661; FN: 0
+Accuracy: 0.011875843454790824
+Precision: 0.011875843454790824
+Recall: 1.0
+Specificity: 0.0
+F1 Score: 0.023472926113630305
+AUROC: 0.49142372923443667
+AUPR: 0.011382510909362781
+MCC: 0.0
+Number of epochs: 20
+Weight decay: 2e-05
+Use metric: MCC
+===== Epoch 1 | total 151.1382 | class 127.7846 | dVQ 12.2714 | tVQ 11.0822 | lam_eff 0.0500 =====
+Epoch 1 codebook perplexity - Drug: 54.4675 | Target: 50.9665
+Evaluate codebook perplexity - Drug: 44.4918 | Target: 39.2560
+TP: 30; TN: 2749; FP: 912; FN: 14
+Accuracy: 0.7500674763832659
+Precision: 0.03184713375796178
+Recall: 0.6818181818181818
+Specificity: 0.7508877355913685
+F1 Score: 0.060851926977687626
+AUROC: 0.7885078592535572
+AUPR: 0.041751245665591914
+MCC: 0.10764730045649228
+===== Epoch 2 | total 85.8763 | class 73.0971 | dVQ 6.0971 | tVQ 6.6821 | lam_eff 0.1000 =====
+Epoch 2 codebook perplexity - Drug: 55.5698 | Target: 52.5308
+Evaluate codebook perplexity - Drug: 45.2864 | Target: 43.0626
+TP: 25; TN: 3025; FP: 636; FN: 19
+Accuracy: 0.8232118758434548
+Precision: 0.037821482602118005
+Recall: 0.5681818181818182
+Specificity: 0.826276973504507
+F1 Score: 0.07092198581560284
+AUROC: 0.7856149586551116
+AUPR: 0.04483181089918269
+MCC: 0.11161043195341355
+===== Epoch 3 | total 69.0095 | class 59.8413 | dVQ 4.1826 | tVQ 4.9856 | lam_eff 0.1500 =====
+Epoch 3 codebook perplexity - Drug: 62.0357 | Target: 58.5001
+Evaluate codebook perplexity - Drug: 55.7237 | Target: 57.0734
+TP: 23; TN: 3239; FP: 422; FN: 21
+Accuracy: 0.8804318488529015
+Precision: 0.051685393258426963
+Recall: 0.5227272727272727
+Specificity: 0.8847309478284622
+F1 Score: 0.09406952965235174
+AUROC: 0.8064053537284894
+AUPR: 0.05185998554040707
+MCC: 0.13577520943527013
+===== Epoch 4 | total 61.2111 | class 53.8818 | dVQ 3.3603 | tVQ 3.9690 | lam_eff 0.2000 =====
+Epoch 4 codebook perplexity - Drug: 73.4160 | Target: 69.5074
+Evaluate codebook perplexity - Drug: 69.7870 | Target: 68.1703
+TP: 22; TN: 3287; FP: 374; FN: 22
+Accuracy: 0.8931174089068826
+Precision: 0.05555555555555555
+Recall: 0.5
+Specificity: 0.8978421196394428
+F1 Score: 0.09999999999999999
+AUROC: 0.8070013160835341
+AUPR: 0.04648822810444922
+MCC: 0.13948932934602992
+===== Epoch 5 | total 53.7185 | class 47.2319 | dVQ 2.8703 | tVQ 3.6163 | lam_eff 0.2500 =====
+Epoch 5 codebook perplexity - Drug: 81.3207 | Target: 78.5903
+Evaluate codebook perplexity - Drug: 74.8054 | Target: 73.9574
+TP: 23; TN: 3317; FP: 344; FN: 21
+Accuracy: 0.9014844804318488
+Precision: 0.06267029972752043
+Recall: 0.5227272727272727
+Specificity: 0.9060366020213056
+F1 Score: 0.1119221411192214
+AUROC: 0.8010292766506916
+AUPR: 0.051214528247127605
+MCC: 0.1554777300526063
+===== Epoch 6 | total 52.9038 | class 46.8323 | dVQ 2.8898 | tVQ 3.1817 | lam_eff 0.3000 =====
+Epoch 6 codebook perplexity - Drug: 83.7662 | Target: 82.7892
+Evaluate codebook perplexity - Drug: 77.7790 | Target: 75.4010
+TP: 23; TN: 3270; FP: 391; FN: 21
+Accuracy: 0.8887989203778678
+Precision: 0.05555555555555555
+Recall: 0.5227272727272727
+Specificity: 0.8931985796230538
+F1 Score: 0.10043668122270741
+AUROC: 0.816238732586725
+AUPR: 0.0683120016640202
+MCC: 0.14301381971687027
+===== Epoch 7 | total 46.7720 | class 41.1242 | dVQ 2.6544 | tVQ 2.9935 | lam_eff 0.3500 =====
+Epoch 7 codebook perplexity - Drug: 85.7135 | Target: 86.7364
+Evaluate codebook perplexity - Drug: 78.5332 | Target: 77.7029
+TP: 18; TN: 3426; FP: 235; FN: 26
+Accuracy: 0.9295546558704454
+Precision: 0.07114624505928854
+Recall: 0.4090909090909091
+Specificity: 0.9358098880087408
+F1 Score: 0.12121212121212123
+AUROC: 0.8034069181296715
+AUPR: 0.06541577970605515
+MCC: 0.14812376645097766
+===== Epoch 8 | total 43.5052 | class 38.0466 | dVQ 2.5950 | tVQ 2.8636 | lam_eff 0.4000 =====
+Epoch 8 codebook perplexity - Drug: 86.9785 | Target: 89.4135
+Evaluate codebook perplexity - Drug: 79.7241 | Target: 79.3290
+TP: 20; TN: 3381; FP: 280; FN: 24
+Accuracy: 0.9179487179487179
+Precision: 0.06666666666666667
+Recall: 0.45454545454545453
+Specificity: 0.9235181644359465
+F1 Score: 0.11627906976744184
+AUROC: 0.8283380099823695
+AUPR: 0.07819716165185814
+MCC: 0.1501315278983134
+===== Epoch 9 | total 39.0412 | class 34.0701 | dVQ 2.3443 | tVQ 2.6268 | lam_eff 0.4500 =====
+Epoch 9 codebook perplexity - Drug: 87.5021 | Target: 90.9520
+Evaluate codebook perplexity - Drug: 80.0295 | Target: 82.9564
+TP: 18; TN: 3504; FP: 157; FN: 26
+Accuracy: 0.9506072874493927
+Precision: 0.10285714285714286
+Recall: 0.4090909090909091
+Specificity: 0.9571155422015842
+F1 Score: 0.16438356164383564
+AUROC: 0.8001167092945295
+AUPR: 0.07016112668229836
+MCC: 0.18700181272694494
+===== Epoch 10 | total 42.2878 | class 37.3270 | dVQ 2.4018 | tVQ 2.5590 | lam_eff 0.5000 =====
+Epoch 10 codebook perplexity - Drug: 88.8849 | Target: 92.8963
+Evaluate codebook perplexity - Drug: 80.8116 | Target: 83.4096
+TP: 18; TN: 3418; FP: 243; FN: 26
+Accuracy: 0.927395411605938
+Precision: 0.06896551724137931
+Recall: 0.4090909090909091
+Specificity: 0.9336246927069107
+F1 Score: 0.1180327868852459
+AUROC: 0.8032330957761167
+AUPR: 0.07509195252330506
+MCC: 0.1450802359907214
+===== Epoch 11 | total 37.0157 | class 32.1771 | dVQ 2.4223 | tVQ 2.4163 | lam_eff 0.5000 =====
+Epoch 11 codebook perplexity - Drug: 89.2543 | Target: 93.9554
+Evaluate codebook perplexity - Drug: 80.6798 | Target: 83.6492
+TP: 20; TN: 3467; FP: 194; FN: 24
+Accuracy: 0.9411605937921728
+Precision: 0.09345794392523364
+Recall: 0.45454545454545453
+Specificity: 0.9470090139306201
+F1 Score: 0.1550387596899225
+AUROC: 0.8131968413995182
+AUPR: 0.07876786816283411
+MCC: 0.18646136307023145
+===== Epoch 12 | total 31.2995 | class 26.9679 | dVQ 2.0926 | tVQ 2.2390 | lam_eff 0.5000 =====
+Epoch 12 codebook perplexity - Drug: 89.6426 | Target: 94.9893
+Evaluate codebook perplexity - Drug: 80.3705 | Target: 84.3898
+TP: 16; TN: 3501; FP: 160; FN: 28
+Accuracy: 0.9492577597840756
+Precision: 0.09090909090909091
+Recall: 0.36363636363636365
+Specificity: 0.956296093963398
+F1 Score: 0.14545454545454545
+AUROC: 0.8143018549328301
+AUPR: 0.08485511472801195
+MCC: 0.16293048177857886
+===== Epoch 13 | total 28.2092 | class 24.2415 | dVQ 1.8938 | tVQ 2.0739 | lam_eff 0.5000 =====
+Epoch 13 codebook perplexity - Drug: 89.8977 | Target: 95.6872
+Evaluate codebook perplexity - Drug: 81.4543 | Target: 84.0184
+TP: 16; TN: 3527; FP: 134; FN: 28
+Accuracy: 0.9562753036437247
+Precision: 0.10666666666666667
+Recall: 0.36363636363636365
+Specificity: 0.9633979786943458
+F1 Score: 0.16494845360824745
+AUROC: 0.8117255593355018
+AUPR: 0.07375273563448087
+MCC: 0.17974388798416457
+===== Epoch 14 | total 26.6434 | class 22.9287 | dVQ 1.7033 | tVQ 2.0115 | lam_eff 0.5000 =====
+Epoch 14 codebook perplexity - Drug: 89.6431 | Target: 96.8815
+Evaluate codebook perplexity - Drug: 81.9721 | Target: 85.4397
+TP: 18; TN: 3527; FP: 134; FN: 26
+Accuracy: 0.9568151147098516
+Precision: 0.11842105263157894
+Recall: 0.4090909090909091
+Specificity: 0.9633979786943458
+F1 Score: 0.1836734693877551
+AUROC: 0.8182252737702069
+AUPR: 0.08236625250521175
+MCC: 0.2034324016370278
+===== Epoch 15 | total 23.1221 | class 19.6522 | dVQ 1.5409 | tVQ 1.9290 | lam_eff 0.5000 =====
+Epoch 15 codebook perplexity - Drug: 89.2918 | Target: 97.4613
+Evaluate codebook perplexity - Drug: 81.3099 | Target: 85.6034
+TP: 16; TN: 3540; FP: 121; FN: 28
+Accuracy: 0.9597840755735493
+Precision: 0.11678832116788321
+Recall: 0.36363636363636365
+Specificity: 0.9669489210598197
+F1 Score: 0.17679558011049726
+AUROC: 0.8113406669812024
+AUPR: 0.0797035456414553
+MCC: 0.18977413222692258
+===== Epoch 16 | total 21.9453 | class 18.6773 | dVQ 1.4247 | tVQ 1.8432 | lam_eff 0.5000 =====
+Epoch 16 codebook perplexity - Drug: 89.5369 | Target: 97.8062
+Evaluate codebook perplexity - Drug: 80.8282 | Target: 85.5592
+TP: 16; TN: 3541; FP: 120; FN: 28
+Accuracy: 0.9600539811066127
+Precision: 0.11764705882352941
+Recall: 0.36363636363636365
+Specificity: 0.9672220704725485
+F1 Score: 0.17777777777777776
+AUROC: 0.8237627573191626
+AUPR: 0.09231425928674059
+MCC: 0.19060122366796275
+===== Epoch 17 | total 22.6788 | class 19.4829 | dVQ 1.4090 | tVQ 1.7868 | lam_eff 0.5000 =====
+Epoch 17 codebook perplexity - Drug: 90.3532 | Target: 98.6203
+Evaluate codebook perplexity - Drug: 81.9410 | Target: 86.0053
+TP: 17; TN: 3547; FP: 114; FN: 27
+Accuracy: 0.9619433198380567
+Precision: 0.1297709923664122
+Recall: 0.38636363636363635
+Specificity: 0.9688609669489211
+F1 Score: 0.19428571428571426
+AUROC: 0.815506195525316
+AUPR: 0.07693392110223078
+MCC: 0.20836094511974404
+===== Epoch 18 | total 20.5949 | class 17.5072 | dVQ 1.3399 | tVQ 1.7478 | lam_eff 0.5000 =====
+Epoch 18 codebook perplexity - Drug: 90.9245 | Target: 99.6545
+Evaluate codebook perplexity - Drug: 81.8864 | Target: 85.8133
+TP: 16; TN: 3551; FP: 110; FN: 28
+Accuracy: 0.962753036437247
+Precision: 0.12698412698412698
+Recall: 0.36363636363636365
+Specificity: 0.9699535645998361
+F1 Score: 0.18823529411764706
+AUROC: 0.8126939981624494
+AUPR: 0.07489168302743676
+MCC: 0.19937606068015967
+===== Epoch 19 | total 19.3459 | class 16.4132 | dVQ 1.2505 | tVQ 1.6822 | lam_eff 0.5000 =====
+Epoch 19 codebook perplexity - Drug: 91.1833 | Target: 100.2441
+Evaluate codebook perplexity - Drug: 82.3557 | Target: 88.1112
+TP: 16; TN: 3568; FP: 93; FN: 28
+Accuracy: 0.9673414304993252
+Precision: 0.14678899082568808
+Recall: 0.36363636363636365
+Specificity: 0.9745971046162251
+F1 Score: 0.20915032679738563
+AUROC: 0.8167229520001986
+AUPR: 0.08118241980132546
+MCC: 0.21683016039867864
+===== Epoch 20 | total 18.8850 | class 16.0543 | dVQ 1.1834 | tVQ 1.6473 | lam_eff 0.5000 =====
+Epoch 20 codebook perplexity - Drug: 91.0344 | Target: 100.8452
+Evaluate codebook perplexity - Drug: 81.1047 | Target: 88.3306
+TP: 12; TN: 3574; FP: 87; FN: 32
+Accuracy: 0.9678812415654521
+Precision: 0.12121212121212122
+Recall: 0.2727272727272727
+Specificity: 0.9762360010925977
+F1 Score: 0.16783216783216784
+AUROC: 0.8065108887288619
+AUPR: 0.07288247750817094
+MCC: 0.16723648481418807
+==========Testing==========
+Best epoch: 19
+Best metric: 0.21683016039867864
+===== Finding Best Threshold on Validation Set =====
+Optimal Threshold: 0.150 | Best Val F1: 0.1809
+========== Testing ==========
+Evaluate codebook perplexity - Drug: 81.4839 | Target: 88.4217
+TP: 16; TN: 3545; FP: 125; FN: 20
+Accuracy: 0.9608742579600648
+Precision: 0.11347517730496454
+Recall: 0.4444444444444444
+Specificity: 0.9659400544959128
+F1 Score: 0.18079096045197743
+AUROC: 0.8426127762640024
+AUPR: 0.11114059380844712
+MCC: 0.2103952386609721
+Random seed: 0
+Running on cuda:0
+Dataset: /raid/data/smunoz/catnip/EviCYP/data_splits
+Batch size: 128
+Model: CYPClassifier(
+  (drug_encoder): Sequential(
+    (0): Linear(in_features=1236, out_features=1024, bias=True)
+    (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Dropout(p=0.25, inplace=False)
+  )
+  (target_encoder): TargetLAEncoder(
+    (feature_conv): Conv1d(1152, 768, kernel_size=(9,), stride=(1,), padding=(4,))
+    (feature_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (attn_conv): Conv1d(1152, 768, kernel_size=(9,), stride=(1,), padding=(4,))
+    (dropout): Dropout(p=0.25, inplace=False)
+    (proj): Sequential(
+      (0): Linear(in_features=1536, out_features=1024, bias=True)
+      (1): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): LeakyReLU(negative_slope=0.01)
+      (3): Dropout(p=0.25, inplace=False)
+    )
+  )
+  (drug_vq): HardVectorQuantizer(
+    (codebook): Embedding(128, 4)
+  )
+  (target_vq): HardVectorQuantizer(
+    (codebook): Embedding(128, 4)
+  )
+  (evidence_head): Sequential(
+    (0): Linear(in_features=2048, out_features=512, bias=True)
+    (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): LeakyReLU(negative_slope=0.01)
+    (3): Dropout(p=0.25, inplace=False)
+    (4): Linear(in_features=512, out_features=2, bias=True)
+  )
+)
+Evaluate codebook perplexity - Drug: 15.8353 | Target: 22.0689
+TP: 44; TN: 0; FP: 3661; FN: 0
+Accuracy: 0.011875843454790824
+Precision: 0.011875843454790824
+Recall: 1.0
+Specificity: 0.0
+F1 Score: 0.023472926113630305
+AUROC: 0.49142372923443667
+AUPR: 0.011382510909362781
+MCC: 0.0
+Number of epochs: 20
+Weight decay: 2e-05
+Use metric: MCC
+===== Epoch 1 | total 151.1382 | class 127.7846 | dVQ 12.2714 | tVQ 11.0822 | lam_eff 0.0500 =====
+Epoch 1 codebook perplexity - Drug: 54.4675 | Target: 50.9665
+Evaluate codebook perplexity - Drug: 44.4918 | Target: 39.2560
+TP: 30; TN: 2749; FP: 912; FN: 14
+Accuracy: 0.7500674763832659
+Precision: 0.03184713375796178
+Recall: 0.6818181818181818
+Specificity: 0.7508877355913685
+F1 Score: 0.060851926977687626
+AUROC: 0.7885078592535572
+AUPR: 0.041751245665591914
+MCC: 0.10764730045649228
+===== Epoch 2 | total 85.8763 | class 73.0971 | dVQ 6.0971 | tVQ 6.6821 | lam_eff 0.1000 =====
+Epoch 2 codebook perplexity - Drug: 55.5698 | Target: 52.5308
+Evaluate codebook perplexity - Drug: 45.2864 | Target: 43.0626
+TP: 25; TN: 3025; FP: 636; FN: 19
+Accuracy: 0.8232118758434548
+Precision: 0.037821482602118005
+Recall: 0.5681818181818182
+Specificity: 0.826276973504507
+F1 Score: 0.07092198581560284
+AUROC: 0.7856149586551116
+AUPR: 0.04483181089918269
+MCC: 0.11161043195341355
+===== Epoch 3 | total 69.0095 | class 59.8413 | dVQ 4.1826 | tVQ 4.9856 | lam_eff 0.1500 =====
+Epoch 3 codebook perplexity - Drug: 62.0357 | Target: 58.5001
+Evaluate codebook perplexity - Drug: 55.7237 | Target: 57.0734
+TP: 23; TN: 3239; FP: 422; FN: 21
+Accuracy: 0.8804318488529015
+Precision: 0.051685393258426963
+Recall: 0.5227272727272727
+Specificity: 0.8847309478284622
+F1 Score: 0.09406952965235174
+AUROC: 0.8064053537284894
+AUPR: 0.05185998554040707
+MCC: 0.13577520943527013
+===== Epoch 4 | total 61.2111 | class 53.8818 | dVQ 3.3603 | tVQ 3.9690 | lam_eff 0.2000 =====
+Epoch 4 codebook perplexity - Drug: 73.4160 | Target: 69.5074
+Evaluate codebook perplexity - Drug: 69.7870 | Target: 68.1703
+TP: 22; TN: 3287; FP: 374; FN: 22
+Accuracy: 0.8931174089068826
+Precision: 0.05555555555555555
+Recall: 0.5
+Specificity: 0.8978421196394428
+F1 Score: 0.09999999999999999
+AUROC: 0.8070013160835341
+AUPR: 0.04648822810444922
+MCC: 0.13948932934602992
+===== Epoch 5 | total 53.7185 | class 47.2319 | dVQ 2.8703 | tVQ 3.6163 | lam_eff 0.2500 =====
+Epoch 5 codebook perplexity - Drug: 81.3207 | Target: 78.5903
+Evaluate codebook perplexity - Drug: 74.8054 | Target: 73.9574
+TP: 23; TN: 3317; FP: 344; FN: 21
+Accuracy: 0.9014844804318488
+Precision: 0.06267029972752043
+Recall: 0.5227272727272727
+Specificity: 0.9060366020213056
+F1 Score: 0.1119221411192214
+AUROC: 0.8010292766506916
+AUPR: 0.051214528247127605
+MCC: 0.1554777300526063
+===== Epoch 6 | total 52.9038 | class 46.8323 | dVQ 2.8898 | tVQ 3.1817 | lam_eff 0.3000 =====
+Epoch 6 codebook perplexity - Drug: 83.7662 | Target: 82.7892
+Evaluate codebook perplexity - Drug: 77.7790 | Target: 75.4010
+TP: 23; TN: 3270; FP: 391; FN: 21
+Accuracy: 0.8887989203778678
+Precision: 0.05555555555555555
+Recall: 0.5227272727272727
+Specificity: 0.8931985796230538
+F1 Score: 0.10043668122270741
+AUROC: 0.816238732586725
+AUPR: 0.0683120016640202
+MCC: 0.14301381971687027
+===== Epoch 7 | total 46.7720 | class 41.1242 | dVQ 2.6544 | tVQ 2.9935 | lam_eff 0.3500 =====
+Epoch 7 codebook perplexity - Drug: 85.7135 | Target: 86.7364
+Evaluate codebook perplexity - Drug: 78.5332 | Target: 77.7029
+TP: 18; TN: 3426; FP: 235; FN: 26
+Accuracy: 0.9295546558704454
+Precision: 0.07114624505928854
+Recall: 0.4090909090909091
+Specificity: 0.9358098880087408
+F1 Score: 0.12121212121212123
+AUROC: 0.8034069181296715
+AUPR: 0.06541577970605515
+MCC: 0.14812376645097766
+===== Epoch 8 | total 43.5052 | class 38.0466 | dVQ 2.5950 | tVQ 2.8636 | lam_eff 0.4000 =====
+Epoch 8 codebook perplexity - Drug: 86.9785 | Target: 89.4135
+Evaluate codebook perplexity - Drug: 79.7241 | Target: 79.3290
+TP: 20; TN: 3381; FP: 280; FN: 24
+Accuracy: 0.9179487179487179
+Precision: 0.06666666666666667
+Recall: 0.45454545454545453
+Specificity: 0.9235181644359465
+F1 Score: 0.11627906976744184
+AUROC: 0.8283380099823695
+AUPR: 0.07819716165185814
+MCC: 0.1501315278983134
+===== Epoch 9 | total 39.0412 | class 34.0701 | dVQ 2.3443 | tVQ 2.6268 | lam_eff 0.4500 =====
+Epoch 9 codebook perplexity - Drug: 87.5021 | Target: 90.9520
+Evaluate codebook perplexity - Drug: 80.0295 | Target: 82.9564
+TP: 18; TN: 3504; FP: 157; FN: 26
+Accuracy: 0.9506072874493927
+Precision: 0.10285714285714286
+Recall: 0.4090909090909091
+Specificity: 0.9571155422015842
+F1 Score: 0.16438356164383564
+AUROC: 0.8001167092945295
+AUPR: 0.07016112668229836
+MCC: 0.18700181272694494
+===== Epoch 10 | total 42.2878 | class 37.3270 | dVQ 2.4018 | tVQ 2.5590 | lam_eff 0.5000 =====
+Epoch 10 codebook perplexity - Drug: 88.8849 | Target: 92.8963
+Evaluate codebook perplexity - Drug: 80.8116 | Target: 83.4096
+TP: 18; TN: 3418; FP: 243; FN: 26
+Accuracy: 0.927395411605938
+Precision: 0.06896551724137931
+Recall: 0.4090909090909091
+Specificity: 0.9336246927069107
+F1 Score: 0.1180327868852459
+AUROC: 0.8032330957761167
+AUPR: 0.07509195252330506
+MCC: 0.1450802359907214
+===== Epoch 11 | total 37.0157 | class 32.1771 | dVQ 2.4223 | tVQ 2.4163 | lam_eff 0.5000 =====
+Epoch 11 codebook perplexity - Drug: 89.2543 | Target: 93.9554
+Evaluate codebook perplexity - Drug: 80.6798 | Target: 83.6492
+TP: 20; TN: 3467; FP: 194; FN: 24
+Accuracy: 0.9411605937921728
+Precision: 0.09345794392523364
+Recall: 0.45454545454545453
+Specificity: 0.9470090139306201
+F1 Score: 0.1550387596899225
+AUROC: 0.8131968413995182
+AUPR: 0.07876786816283411
+MCC: 0.18646136307023145
+===== Epoch 12 | total 31.2995 | class 26.9679 | dVQ 2.0926 | tVQ 2.2390 | lam_eff 0.5000 =====
+Epoch 12 codebook perplexity - Drug: 89.6426 | Target: 94.9893
+Evaluate codebook perplexity - Drug: 80.3705 | Target: 84.3898
+TP: 16; TN: 3501; FP: 160; FN: 28
+Accuracy: 0.9492577597840756
+Precision: 0.09090909090909091
+Recall: 0.36363636363636365
+Specificity: 0.956296093963398
+F1 Score: 0.14545454545454545
+AUROC: 0.8143018549328301
+AUPR: 0.08485511472801195
+MCC: 0.16293048177857886
+===== Epoch 13 | total 28.2092 | class 24.2415 | dVQ 1.8938 | tVQ 2.0739 | lam_eff 0.5000 =====
+Epoch 13 codebook perplexity - Drug: 89.8977 | Target: 95.6872
+Evaluate codebook perplexity - Drug: 81.4543 | Target: 84.0184
+TP: 16; TN: 3527; FP: 134; FN: 28
+Accuracy: 0.9562753036437247
+Precision: 0.10666666666666667
+Recall: 0.36363636363636365
+Specificity: 0.9633979786943458
+F1 Score: 0.16494845360824745
+AUROC: 0.8117255593355018
+AUPR: 0.07375273563448087
+MCC: 0.17974388798416457
+===== Epoch 14 | total 26.6434 | class 22.9287 | dVQ 1.7033 | tVQ 2.0115 | lam_eff 0.5000 =====
+Epoch 14 codebook perplexity - Drug: 89.6431 | Target: 96.8815
+Evaluate codebook perplexity - Drug: 81.9721 | Target: 85.4397
+TP: 18; TN: 3527; FP: 134; FN: 26
+Accuracy: 0.9568151147098516
+Precision: 0.11842105263157894
+Recall: 0.4090909090909091
+Specificity: 0.9633979786943458
+F1 Score: 0.1836734693877551
+AUROC: 0.8182252737702069
+AUPR: 0.08236625250521175
+MCC: 0.2034324016370278
+===== Epoch 15 | total 23.1221 | class 19.6522 | dVQ 1.5409 | tVQ 1.9290 | lam_eff 0.5000 =====
+Epoch 15 codebook perplexity - Drug: 89.2918 | Target: 97.4613
+Evaluate codebook perplexity - Drug: 81.3099 | Target: 85.6034
+TP: 16; TN: 3540; FP: 121; FN: 28
+Accuracy: 0.9597840755735493
+Precision: 0.11678832116788321
+Recall: 0.36363636363636365
+Specificity: 0.9669489210598197
+F1 Score: 0.17679558011049726
+AUROC: 0.8113406669812024
+AUPR: 0.0797035456414553
+MCC: 0.18977413222692258
+===== Epoch 16 | total 21.9453 | class 18.6773 | dVQ 1.4247 | tVQ 1.8432 | lam_eff 0.5000 =====
+Epoch 16 codebook perplexity - Drug: 89.5369 | Target: 97.8062
+Evaluate codebook perplexity - Drug: 80.8282 | Target: 85.5592
+TP: 16; TN: 3541; FP: 120; FN: 28
+Accuracy: 0.9600539811066127
+Precision: 0.11764705882352941
+Recall: 0.36363636363636365
+Specificity: 0.9672220704725485
+F1 Score: 0.17777777777777776
+AUROC: 0.8237627573191626
+AUPR: 0.09231425928674059
+MCC: 0.19060122366796275
+===== Epoch 17 | total 22.6788 | class 19.4829 | dVQ 1.4090 | tVQ 1.7868 | lam_eff 0.5000 =====
+Epoch 17 codebook perplexity - Drug: 90.3532 | Target: 98.6203
+Evaluate codebook perplexity - Drug: 81.9410 | Target: 86.0053
+TP: 17; TN: 3547; FP: 114; FN: 27
+Accuracy: 0.9619433198380567
+Precision: 0.1297709923664122
+Recall: 0.38636363636363635
+Specificity: 0.9688609669489211
+F1 Score: 0.19428571428571426
+AUROC: 0.815506195525316
+AUPR: 0.07693392110223078
+MCC: 0.20836094511974404
+===== Epoch 18 | total 20.5949 | class 17.5072 | dVQ 1.3399 | tVQ 1.7478 | lam_eff 0.5000 =====
+Epoch 18 codebook perplexity - Drug: 90.9245 | Target: 99.6545
+Evaluate codebook perplexity - Drug: 81.8864 | Target: 85.8133
+TP: 16; TN: 3551; FP: 110; FN: 28
+Accuracy: 0.962753036437247
+Precision: 0.12698412698412698
+Recall: 0.36363636363636365
+Specificity: 0.9699535645998361
+F1 Score: 0.18823529411764706
+AUROC: 0.8126939981624494
+AUPR: 0.07489168302743676
+MCC: 0.19937606068015967
+===== Epoch 19 | total 19.3459 | class 16.4132 | dVQ 1.2505 | tVQ 1.6822 | lam_eff 0.5000 =====
+Epoch 19 codebook perplexity - Drug: 91.1833 | Target: 100.2441
+Evaluate codebook perplexity - Drug: 82.3557 | Target: 88.1112
+TP: 16; TN: 3568; FP: 93; FN: 28
+Accuracy: 0.9673414304993252
+Precision: 0.14678899082568808
+Recall: 0.36363636363636365
+Specificity: 0.9745971046162251
+F1 Score: 0.20915032679738563
+AUROC: 0.8167229520001986
+AUPR: 0.08118241980132546
+MCC: 0.21683016039867864
+===== Epoch 20 | total 18.8850 | class 16.0543 | dVQ 1.1834 | tVQ 1.6473 | lam_eff 0.5000 =====
+Epoch 20 codebook perplexity - Drug: 91.0344 | Target: 100.8452
+Evaluate codebook perplexity - Drug: 81.1047 | Target: 88.3306
+TP: 12; TN: 3574; FP: 87; FN: 32
+Accuracy: 0.9678812415654521
+Precision: 0.12121212121212122
+Recall: 0.2727272727272727
+Specificity: 0.9762360010925977
+F1 Score: 0.16783216783216784
+AUROC: 0.8065108887288619
+AUPR: 0.07288247750817094
+MCC: 0.16723648481418807
+==========Testing==========
+Best epoch: 19
+Best metric: 0.21683016039867864
+===== Finding Best Threshold on Validation Set =====
+Optimal Threshold: 0.110 | Best Val MCC: 0.1981
+========== Testing ==========
+Evaluate codebook perplexity - Drug: 81.4839 | Target: 88.4217
+TP: 17; TN: 3532; FP: 138; FN: 19
+Accuracy: 0.9576362655153805
+Precision: 0.10967741935483871
+Recall: 0.4722222222222222
+Specificity: 0.9623978201634877
+F1 Score: 0.17801047120418848
+AUROC: 0.8426127762640024
+AUPR: 0.11114059380844712
+MCC: 0.2129378413423233

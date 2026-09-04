@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+rq==1.13.0
+scikit-learn
+pandas<2.0.0
+numpy<2.0.0
+catboost
