@@ -2,8 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # File paths
-your_path = "/raid/data/smunoz/catnip/EviCYP/data_splits/train.csv"
-paper_path = "/raid/data/smunoz/catnip/EviCYP/ahmed_data/train.csv"
+your_path = "EviCYP/data_splits/train.csv"
+paper_path = "EviCYP/ahmed_data/train.csv"
 
 # Load datasets
 df_paper = pd.read_csv(paper_path)

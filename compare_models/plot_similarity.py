@@ -6,12 +6,12 @@ import pandas as pd
 # PATHS & CONFIGURATION
 # =========================================================
 EMBEDDING_CSV = (
-    "/raid/data/smunoz/catnip/ESMC-6000/embedding_similarity_table.csv"
+    "ESMC-6000/embedding_similarity_table.csv"
 )
-ALIGNMENT_CSV = "/raid/data/smunoz/catnip/data/alignment_scores.csv"
+ALIGNMENT_CSV = "data/alignment_scores.csv"
 
 TARGET_NODES = [1, 2, 3, 6, 7]
-OUTPUT_DIR = "/raid/data/smunoz/catnip/compare_models"
+OUTPUT_DIR = "compare_models"
 
 
 def plot_dual_similarity(

@@ -10,11 +10,11 @@ if __name__ == "__main__":
     as_table = utils.load_sequence_similarity()
 
     pca = utils.get_initial_pca(
-        train, path="/raid/data/smunoz/catnip/final_plots/pca_plot_"
+        train, path="final_plots/pca_plot_"
     )
 
     ranker = CatBoostRanker().load_model(
-        "/raid/data/smunoz/catnip/research_code/for_backend/scoring_formula_50_2.cb"
+        "research_code/for_backend/scoring_formula_50_2.cb"
     )
     test_metrics, predictions, fh = utils.get_score(
         test,
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     # Remove only the neighbor_pca columns before saving
     pca_cols = [col for col in predictions.columns if col.startswith("neighbor_pca_")]
     predictions.drop(columns=pca_cols).to_csv(
-        "/raid/data/smunoz/catnip/final_plots/predictions.csv", index=False
+        "final_plots/predictions.csv", index=False
     )
 
     dataset = utils.get_score(
@@ -61,6 +61,6 @@ if __name__ == "__main__":
     )
 
     pd.DataFrame([test_metrics, baseline_metrics]).to_csv(
-        "/raid/data/smunoz/catnip/final_plots/metrics_comparison.csv",
+        "final_plots/metrics_comparison.csv",
         index=False,
     )

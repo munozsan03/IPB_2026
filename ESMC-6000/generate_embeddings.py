@@ -193,7 +193,7 @@ if __name__ == "__main__":
 
     # Input CSV
     csv_path = (
-        "/raid/data/smunoz/catnip/ESMC-6000/"
+        "ESMC-6000/"
         "si_proteins 1.csv"
     )
 
@@ -263,7 +263,7 @@ enzyme_emb_dict = {
     enz_id: data["features"] for enz_id, data in embeddings.items()
 }
 
-with open("/raid/data/smunoz/catnip/EviCYP/data_scaffold/target_esmc.pkl", "wb") as f:
+with open("EviCYP/data_scaffold/target_esmc.pkl", "wb") as f:
     pickle.dump(enzyme_emb_dict, f)
 
 print("Saved enzyme embeddings dictionary for EviCYP training!")

@@ -9,16 +9,16 @@ if __name__ == "__main__":
     interactions = utils.load_interactions()
     as_table = utils.load_sequence_similarity()
 
-    pca = utils.get_initial_pca(train, path='/raid/data/smunoz/catnip/final_plots/embedding_pca_plot_')
+    pca = utils.get_initial_pca(train, path='final_plots/embedding_pca_plot_')
 
-    ranker = CatBoostRanker().load_model('/raid/data/smunoz/catnip/research_code/for_backend/embedding_scoring_formula_50_2.cb')
+    ranker = CatBoostRanker().load_model('research_code/for_backend/embedding_scoring_formula_50_2.cb')
     test_metrics, predictions, fh = utils.get_score(
         test, interactions, as_table, pca, utils.get_formula(ranker), mode='evaluation')
     
     # Remove only the neighbor_pca columns before saving
     pca_cols = [col for col in predictions.columns if col.startswith('neighbor_pca_')]
     predictions.drop(columns=pca_cols).to_csv(
-        '/raid/data/smunoz/catnip/final_plots/embedding_predictions.csv', index=False
+        'final_plots/embedding_predictions.csv', index=False
     )
 
     dataset = utils.get_score(train, interactions, as_table, pca, None, mode='training')
@@ -37,4 +37,4 @@ if __name__ == "__main__":
     baseline_metrics, _, fh2 = utils.get_score(
         test, interactions, as_table, pca, utils.get_formula_baseline(), mode='evaluation')
 
-    pd.DataFrame([test_metrics, baseline_metrics]).to_csv('/raid/data/smunoz/catnip/final_plots/embedding_metrics_comparison.csv', index=False)
+    pd.DataFrame([test_metrics, baseline_metrics]).to_csv('final_plots/embedding_metrics_comparison.csv', index=False)

@@ -183,7 +183,7 @@ def featurize_data(entities, norm_params):
 
 if __name__ == '__main__':
     feature = os.path.basename(__file__)[:-3]
-    datadir = '/raid/data/smunoz/catnip/EviCYP/data_splits'
+    datadir = 'EviCYP/data_splits'
     logger.info(f"Reading data from {datadir}")
 
     # Set to True if only val.csv exists

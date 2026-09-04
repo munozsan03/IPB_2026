@@ -527,7 +527,7 @@ class CYPClassifier(nn.Module):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--datadir', type=str, default='/raid/data/smunoz/catnip/EviCYP/data_splits')
+    parser.add_argument('--datadir', type=str, default='EviCYP/data_splits')
     parser.add_argument('--drug', type=str, default='drug_bmfm')
     parser.add_argument('--target', type=str, default='target_esmc')
     parser.add_argument('--random', type=int, default=0)

@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 # Update this path to your generated pickle file
-pickle_path = "/raid/data/smunoz/catnip/ESMC-6000/generate_embeddings.pkl"
+pickle_path = "ESMC-6000/generate_embeddings.pkl"
 
 with open(pickle_path, "rb") as f:
     data = pickle.load(f)

@@ -3,8 +3,8 @@ from joblib import Parallel, delayed
 from calculate_features import Substrate  # Make sure that calculate_features.py is in the same directory
 
 # Hardcoded file paths
-INPUT_CSV = "/raid/data/smunoz/catnip/data/subsrates_quick_test.csv"
-OUTPUT_CSV = "/raid/data/smunoz/catnip/data/subsrates_with_features.csv"
+INPUT_CSV = "data/subsrates_quick_test.csv"
+OUTPUT_CSV = "data/subsrates_with_features.csv"
 
 if __name__ == "__main__":
     df = pd.read_csv(INPUT_CSV)

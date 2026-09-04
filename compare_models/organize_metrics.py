@@ -5,8 +5,8 @@ import re
 # PATHS
 # =========================================================
 
-INPUT_DIR = "/raid/data/smunoz/catnip/final_plots"
-OUTPUT_DIR = "/raid/data/smunoz/catnip/compare_models"
+INPUT_DIR = "final_plots"
+OUTPUT_DIR = "compare_models"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 

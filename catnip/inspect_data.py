@@ -1,7 +1,7 @@
 import pickle
 import pandas as pd
 
-pickle_path = "/raid/data/smunoz/catnip/ESMC-6000/generate_embeddings.pkl"
+pickle_path = "ESMC-6000/generate_embeddings.pkl"
 
 print("=== CHECKING PICKLE FILE ===")
 with open(pickle_path, 'rb') as f:
@@ -29,8 +29,8 @@ if isinstance(data, dict):
         print(f"Shape of embedding array: {sample_val.shape}")
 
 print("\n=== CHECKING CSV FILES ===")
-reactions_df = pd.read_csv("/raid/data/smunoz/catnip/data/reaction_table.csv")
-features_df = pd.read_csv("/raid/data/smunoz/catnip/data/features.csv")
+reactions_df = pd.read_csv("data/reaction_table.csv")
+features_df = pd.read_csv("data/features.csv")
 
 print("\n--- REACTION TABLE HEAD ---")
 print(reactions_df.head(3))

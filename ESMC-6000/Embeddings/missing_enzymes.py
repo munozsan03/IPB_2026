@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("/raid/data/smunoz/catnip/ESMC-6000/si_proteins 1.csv")
+df = pd.read_csv("ESMC-6000/si_proteins 1.csv")
 
 expected = set(range(1, 315))
 found = set(df["number"].astype(int))

@@ -31,7 +31,7 @@ if __name__ == "__main__":
         for depth in tqdm(depths):
             ranker = CatBoostRanker(iterations=iteration, depth=depth, loss_function='YetiRank')
             ranker.fit(dataset.drop(columns=['node 2', 'hit', 'query']), dataset['hit'], group_id=dataset['query'])
-            ranker.save_model(f'/raid/data/smunoz/catnip/research_code/for_backend/ES_AS_scoring_formula_{iteration}_{depth}.cb')
+            ranker.save_model(f'research_code/for_backend/ES_AS_scoring_formula_{iteration}_{depth}.cb')
 
             test_metrics, _, _ = utils.get_score(
                 test, interactions, es_table, as_table, pca, utils.get_formula(ranker), mode='evaluation')
@@ -49,7 +49,7 @@ if __name__ == "__main__":
             all_metrics.append(test_metrics)
 
     all_metrics = pd.DataFrame(all_metrics)
-    all_metrics.to_csv('/raid/data/smunoz/catnip/final_plots/ES_AS_metrics.csv', index=False)
+    all_metrics.to_csv('final_plots/ES_AS_metrics.csv', index=False)
 
 
 best = all_metrics.loc[all_metrics['ndcg'].idxmax()]

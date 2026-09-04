@@ -18,7 +18,7 @@ ENZYME_NEIGHBORS = 10
 
 
 def get_train_and_test():
-    data = pd.read_csv('/raid/data/smunoz/catnip/data/features.csv')
+    data = pd.read_csv('data/features.csv')
 
     wo_empty_rows_x = data[data['sasa_area'].notna()]
 
@@ -92,18 +92,18 @@ def get_initial_pca(data, path='final_plots/pca_plot_'):
 
 
 def load_interactions():
-    interactions = pd.read_csv('/raid/data/smunoz/catnip/data/reaction_table.csv')
+    interactions = pd.read_csv('data/reaction_table.csv')
     return interactions
 
 
 def load_sequence_similarity():
-    es_table = pd.read_csv('/raid/data/smunoz/catnip/ESMC-6000/embedding_similarity_table.csv')
+    es_table = pd.read_csv('ESMC-6000/embedding_similarity_table.csv')
     es_table = es_table[es_table['ES %'].notna()]
     return es_table
 
 
 def load_alignment_similarity():
-    as_table = pd.read_csv('/raid/data/smunoz/catnip/data/alignment_scores.csv')
+    as_table = pd.read_csv('data/alignment_scores.csv')
     as_table = as_table[as_table['AS %'].notna()]
     as_table['AS %'] = as_table['AS %'].map(lambda x: float(x[:-1]) / 100)
 

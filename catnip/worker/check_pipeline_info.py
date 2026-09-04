@@ -3,8 +3,8 @@ import pickle
 import os
 
 # --- PATHS ---
-DATA_DIR = "/raid/data/smunoz/catnip/data"
-PICKLE_PATH = "/raid/data/smunoz/catnip/ESMC-6000/generate_embeddings.pkl"
+DATA_DIR = "data"
+PICKLE_PATH = "ESMC-6000/generate_embeddings.pkl"
 REACTION_PATH = os.path.join(DATA_DIR, "reaction_table.csv")
 FEATURES_PATH = os.path.join(DATA_DIR, "features.csv")
 

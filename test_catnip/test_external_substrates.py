@@ -14,7 +14,7 @@ from catboost import CatBoostRanker
 # Paths
 # =====================================================================
 
-CATNIP_ROOT = "/raid/data/smunoz/catnip"
+CATNIP_ROOT = "."
 
 FEATURES_CSV = os.path.join(CATNIP_ROOT, "data/features.csv")
 REACTION_TABLE = os.path.join(CATNIP_ROOT, "data/reaction_table.csv")

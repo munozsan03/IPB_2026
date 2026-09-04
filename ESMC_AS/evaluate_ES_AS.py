@@ -11,11 +11,11 @@ if __name__ == "__main__":
     es_table = utils.load_sequence_similarity()
     as_table = utils.load_alignment_similarity()
     pca = utils.get_initial_pca(
-        train, path="/raid/data/smunoz/catnip/final_plots/ES_AS_pca_plot_"
+        train, path="final_plots/ES_AS_pca_plot_"
     )
 
     ranker = CatBoostRanker().load_model(
-        "/raid/data/smunoz/catnip/research_code/for_backend/ES_AS_scoring_formula_50_2.cb"
+        "research_code/for_backend/ES_AS_scoring_formula_50_2.cb"
     )
     test_metrics, predictions, fh = utils.get_score(
         test,
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     simplified_predictions = predictions.drop(columns=pca_cols)
 
     simplified_predictions.to_csv(
-        "/raid/data/smunoz/catnip/final_plots/ES_AS_predictions.csv",
+        "final_plots/ES_AS_predictions.csv",
         index=False,
     )
 
@@ -69,6 +69,6 @@ if __name__ == "__main__":
     )
 
     pd.DataFrame([test_metrics, baseline_metrics]).to_csv(
-        "/raid/data/smunoz/catnip/final_plots/ES_AS_metrics_comparison.csv",
+        "final_plots/ES_AS_metrics_comparison.csv",
         index=False,
     )

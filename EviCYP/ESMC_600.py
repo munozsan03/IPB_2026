@@ -6,8 +6,8 @@ import torch
 import transformers
 from tqdm import tqdm
 
-CSV_PATH = "/raid/data/smunoz/catnip/ESMC-6000/si_proteins 1.csv"
-OUTPUT_PKL_PATH = "/raid/data/smunoz/catnip/EviCYP/data_splits/target_esmc.pkl"
+CSV_PATH = "ESMC-6000/si_proteins 1.csv"
+OUTPUT_PKL_PATH = "EviCYP/data_splits/target_esmc.pkl"
 
 
 def load_esmc_model():
